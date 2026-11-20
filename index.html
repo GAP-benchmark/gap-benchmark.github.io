@@ -4,32 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Primary SEO Meta Tags -->
-  <title>GAP Benchmark — General AGI Probe | Frontier AI Leaderboard</title>
-  <meta name="title" content="GAP Benchmark — General AGI Probe | Frontier AI Leaderboard">
-  <meta name="description" content="Independent scientific benchmark evaluating frontier AI models against Artificial General Intelligence (AGI) claims. Pareto frontier analytics, scores, compute cost (CPTask), and throughput (TPTask).">
-  <meta name="keywords" content="GAP benchmark, General AGI Probe, AGI benchmark, Artificial Analysis, Chatbot Arena, frontier AI evaluation, LLM leaderboard, artificial general intelligence test, AI cost per task, CPTask, TPTask, OpenAI, Anthropic">
-  <meta name="author" content="GAP Benchmark">
-  <meta name="robots" content="index, follow, max-image-preview:large">
+  <!-- Primary SEO Meta Tags (Rank #1 Optimization) -->
+  <title>GAP Benchmark — General AGI Probe | Frontier AI Model Leaderboard & AGI Test</title>
+  <meta name="title" content="GAP Benchmark — General AGI Probe | Frontier AI Model Leaderboard & AGI Test">
+  <meta name="description" content="Official independent benchmark evaluating frontier AI models against Artificial General Intelligence (AGI) claims. Real-time scores, compute cost (CPTask in USD), and time per task in minutes (TPTask).">
+  <meta name="keywords" content="GAP benchmark, General AGI Probe, AGI benchmark, Artificial General Intelligence test, frontier AI models leaderboard, TPTask, CPTask, time per task, cost per task, LLM reasoning test 2026, OpenAI GPT 6.2 Astra, Anthropic Fable 5.2, AGI leaderboard">
+  <meta name="author" content="GAP Benchmark Initiative">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://gap.sdj.com.np/">
   <meta name="theme-color" content="#ffffff">
 
-  <!-- Open Graph / Social -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gap.sdj.com.np/">
   <meta property="og:site_name" content="GAP Benchmark">
-  <meta property="og:title" content="GAP Benchmark — General AGI Probe">
-  <meta property="og:description" content="Independent benchmark testing AI models against real AGI claims. Transparent rankings by capability score, compute cost, and task throughput.">
+  <meta property="og:title" content="GAP Benchmark — General AGI Probe | Frontier AI Leaderboard">
+  <meta property="og:description" content="Official independent benchmark testing AI models against real AGI claims. Live rankings by reasoning score, compute cost (CPTask), and time per task in minutes (TPTask).">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@GAP_benchmark">
   <meta name="twitter:creator" content="@GAP_benchmark">
-  <meta name="twitter:title" content="GAP Benchmark — General AGI Probe">
-  <meta name="twitter:description" content="Independent benchmark testing AI models against real AGI claims. Transparent rankings by capability score, compute cost, and task throughput.">
+  <meta name="twitter:title" content="GAP Benchmark — General AGI Probe | Frontier AI Leaderboard">
+  <meta name="twitter:description" content="Official independent benchmark testing AI models against real AGI claims. Live rankings by reasoning score, compute cost (CPTask), and time per task in minutes (TPTask).">
 
-  <!-- JSON-LD Structured Data for Search Engines -->
+  <!-- JSON-LD Structured Data Schemas for Google Search Rich Snippets -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -40,7 +40,7 @@
         "url": "https://gap.sdj.com.np/",
         "name": "GAP Benchmark",
         "alternateName": "General AGI Probe",
-        "description": "Independent Frontier AI Benchmark & Leaderboard",
+        "description": "Official Independent Frontier AI Benchmark and AGI Verification Leaderboard",
         "publisher": {
           "@type": "Organization",
           "name": "GAP Benchmark",
@@ -55,11 +55,18 @@
       {
         "@type": "Dataset",
         "@id": "https://gap.sdj.com.np/#dataset",
-        "name": "GAP Benchmark: General AGI Probe Dataset",
-        "description": "Empirical evaluation metrics measuring frontier AI model performance, reasoning scores, task processing throughput (TPTask), and compute cost per task (CPTask).",
+        "name": "GAP Benchmark: General AGI Probe Frontier Model Dataset",
+        "description": "Continuous empirical evaluation metrics measuring frontier AI model performance, reasoning scores, time per task in minutes (TPTask), and compute cost per task in USD (CPTask).",
         "url": "https://gap.sdj.com.np/",
         "license": "https://creativecommons.org/licenses/by/4.0/",
         "isAccessibleForFree": true,
+        "variableMeasured": [
+          "GAP Composite Reasoning Score",
+          "Time Per Task in Minutes (TPTask)",
+          "Compute Cost Per Task in USD (CPTask)",
+          "Cost Efficiency Yield (Score / CPTask)",
+          "License Type (Open Weights vs Closed API)"
+        ],
         "creator": {
           "@type": "Organization",
           "name": "GAP Benchmark",
@@ -74,6 +81,30 @@
         ]
       },
       {
+        "@type": "BreadcrumbList",
+        "@id": "https://gap.sdj.com.np/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://gap.sdj.com.np/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Leaderboard",
+            "item": "https://gap.sdj.com.np/#leaderboard"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Analytics & Charts",
+            "item": "https://gap.sdj.com.np/#charts"
+          }
+        ]
+      },
+      {
         "@type": "FAQPage",
         "@id": "https://gap.sdj.com.np/#faq",
         "mainEntity": [
@@ -82,7 +113,7 @@
             "name": "What is the GAP Benchmark?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "GAP stands for General AGI Probe. As labs claim to have achieved AGI, GAP independently tests frontier models against rigorous reasoning tasks to measure real capabilities, compute cost per task (CPTask), and throughput (TPTask)."
+              "text": "GAP stands for General AGI Probe. As labs claim to have achieved AGI, GAP independently tests frontier models against rigorous reasoning tasks to measure real capabilities, compute cost per task (CPTask), and execution time per task in minutes (TPTask)."
             }
           },
           {
@@ -90,15 +121,23 @@
             "name": "What do TPTask and CPTask mean?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "TPTask represents Task Processing throughput and speed. CPTask represents the compute cost in dollars required to execute a standardized benchmark task."
+              "text": "TPTask stands for Time Per Task (measured in minutes), which tracks the wall-clock execution latency required by the model to complete the multi-step reasoning problem (lower is faster). CPTask stands for Compute Cost Per Task (measured in USD), tracking inference dollar cost per completed task (lower is cheaper)."
             }
           },
           {
             "@type": "Question",
-            "name": "Where is the official platform hosted?",
+            "name": "How is Cost Efficiency calculated?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The official GAP Benchmark platform and detailed historical task telemetry are hosted at https://gap.sdj.com.np."
+              "text": "Cost efficiency is calculated as the model's GAP Score divided by its CPTask (Score / CPTask), identifying the Pareto Frontier models that deliver maximum reasoning intelligence per dollar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can researchers see deeper task logs and prompt traces?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Full historical task logs, trace telemetry, and research whitepapers are hosted on our official benchmark platform at https://gap.sdj.com.np."
             }
           }
         ]
@@ -215,7 +254,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
       
       <!-- Logo -->
-      <a href="#" class="flex items-center gap-2.5 group">
+      <a href="#" class="flex items-center gap-2.5 group" aria-label="GAP Benchmark Home">
         <div class="w-7 h-7 rounded bg-[#43003b] text-white flex items-center justify-center font-mono font-bold text-xs tracking-wider shadow-sm">
           GAP
         </div>
@@ -226,7 +265,7 @@
       </a>
 
       <!-- Navigation Links -->
-      <nav class="hidden md:flex items-center gap-6 text-sm text-neutral-600 font-medium">
+      <nav class="hidden md:flex items-center gap-6 text-sm text-neutral-600 font-medium" aria-label="Primary Navigation">
         <a href="#leaderboard" class="hover:text-neutral-950 transition-colors">Leaderboard</a>
         <a href="#charts" class="hover:text-neutral-950 transition-colors">Visual Analytics & Charts</a>
         <a href="#compare" class="hover:text-neutral-950 transition-colors">Head-to-Head Compare</a>
@@ -237,8 +276,15 @@
         </a>
       </nav>
 
-      <!-- Right Action Cluster: Clean SVGs -->
-      <div class="flex items-center gap-1.5">
+      <!-- Right Action Cluster: Clean SVGs + Real-Time Auto Sync Indicator -->
+      <div class="flex items-center gap-2">
+        
+        <!-- Live Auto-Sync Status Badge -->
+        <div id="autoSyncBadge" class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono text-emerald-800 bg-emerald-50 border border-emerald-200" title="Auto-fetching latest dataset from leaderboard-5kj.pages.dev">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span id="syncStatusText">Auto-Synced</span>
+        </div>
+
         <!-- GitHub -->
         <a href="https://github.com/GAP-benchmark" target="_blank" rel="noopener noreferrer" 
            class="p-2 text-neutral-500 hover:text-neutral-950 hover:bg-neutral-100 rounded-md transition-colors" 
@@ -266,7 +312,7 @@
         </a>
 
         <!-- Live Sync Button -->
-        <button id="refreshBtn" type="button" class="btn-action ml-1 p-2 text-neutral-500 hover:text-neutral-950 hover:bg-neutral-100 rounded-md transition-colors" title="Sync live data" aria-label="Refresh">
+        <button id="refreshBtn" type="button" class="btn-action ml-1 p-2 text-neutral-500 hover:text-neutral-950 hover:bg-neutral-100 rounded-md transition-colors" title="Force Sync Latest CSV" aria-label="Refresh Data">
           <svg id="refreshSvg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
             <path d="M21 3v5h-5"></path>
@@ -294,14 +340,14 @@
           <span class="text-xs font-mono text-neutral-400 hidden sm:inline">OBJECTIVE EVALUATION · NO PROMPT CONTAMINATION</span>
         </div>
 
-        <!-- Headline -->
+        <!-- Headline (High Authority SEO Target) -->
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-neutral-950 tracking-tight-display max-w-4xl leading-[1.08] mb-5">
           Probing AI models against real AGI claims.
         </h1>
 
-        <!-- Subtitle -->
+        <!-- Subtitle: Crystal-clear definitions of CPTask and TPTask in minutes -->
         <p class="text-lg sm:text-xl text-neutral-600 font-normal leading-relaxed max-w-3xl mb-8">
-          As AI labs claim to have achieved AGI, <strong class="text-neutral-950 font-semibold">GAP (General AGI Probe)</strong> independently evaluates frontier models on true reasoning generalization, compute cost per task (<span class="font-mono text-sm bg-neutral-100 px-1 py-0.5 rounded text-neutral-800">CPTask</span>), and execution throughput (<span class="font-mono text-sm bg-neutral-100 px-1 py-0.5 rounded text-neutral-800">TPTask</span>).
+          As AI labs claim to have achieved AGI, <strong class="text-neutral-950 font-semibold">GAP (General AGI Probe)</strong> independently evaluates frontier models on true reasoning generalization, compute cost per task in USD (<span class="font-mono text-sm bg-neutral-100 px-1.5 py-0.5 rounded text-neutral-800">CPTask</span>), and wall-clock execution time per task in minutes (<span class="font-mono text-sm bg-neutral-100 px-1.5 py-0.5 rounded text-neutral-800">TPTask</span>).
         </p>
 
         <!-- CTA Row -->
@@ -353,14 +399,14 @@
 
           <div class="clean-card rounded-xl p-4 sm:p-5">
             <div class="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1 flex items-center justify-between">
-              <span>Lowest Cost</span>
-              <svg class="w-3.5 h-3.5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              <span>Fastest Task Time</span>
+              <svg class="w-3.5 h-3.5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             </div>
-            <div id="statLowestCost" class="text-xl sm:text-2xl font-semibold text-neutral-950 tracking-tight truncate">
+            <div id="statFastestTime" class="text-xl sm:text-2xl font-semibold text-neutral-950 tracking-tight truncate">
               —
             </div>
-            <div id="statLowestCostVal" class="text-xs text-neutral-500 mt-1 font-mono">
-              CPTask: —
+            <div id="statFastestTimeVal" class="text-xs text-neutral-500 mt-1 font-mono">
+              TPTask: —
             </div>
           </div>
 
@@ -373,7 +419,7 @@
               —
             </div>
             <div class="text-xs text-neutral-500 mt-1 font-mono">
-              Live Verified
+              Auto-Synced Live
             </div>
           </div>
 
@@ -395,7 +441,7 @@
               Frontier Analytics & Trade-Offs
             </h2>
             <p class="text-sm text-neutral-600 mt-1">
-              Explore multi-variable trade-offs between reasoning score, inference compute cost, and throughput.
+              Multi-variable trade-offs between reasoning score, compute cost in USD (CPTask), and execution time in minutes (TPTask).
             </p>
           </div>
 
@@ -421,7 +467,7 @@
             Intelligence per Dollar
           </button>
           <button type="button" data-chartview="speed" class="chart-tab text-xs font-medium px-3 py-1.5 rounded-lg text-neutral-600 hover:text-neutral-950 hover:bg-white/60 transition-all">
-            Quality vs Speed (TPTask)
+            Quality vs Time per Task
           </button>
         </div>
 
@@ -433,7 +479,7 @@
             <div class="flex items-start justify-between mb-3">
               <div>
                 <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Trade-Off Analysis</span>
-                <h3 class="text-base font-semibold text-neutral-900 mt-0.5">Pareto Frontier: Score vs. Cost</h3>
+                <h3 class="text-base font-semibold text-neutral-900 mt-0.5">Pareto Frontier: Score vs. Compute Cost</h3>
                 <p class="text-xs text-neutral-500 mt-0.5">X-axis: Compute Cost ($). Y-axis: GAP Score. Models in the top-left define the optimal frontier.</p>
               </div>
               <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">Optimal Frontier</span>
@@ -473,15 +519,15 @@
             </div>
           </div>
 
-          <!-- Chart 4: QUALITY VS SPEED (TPTask Throughput Scatter) -->
+          <!-- Chart 4: QUALITY VS TIME PER TASK (TPTask in Minutes) -->
           <div id="cardSpeed" class="clean-card rounded-xl p-5 sm:p-6 bg-white flex flex-col">
             <div class="flex items-start justify-between mb-3">
               <div>
-                <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Speed & Throughput</span>
-                <h3 class="text-base font-semibold text-neutral-900 mt-0.5">Quality vs. Task Throughput (TPTask)</h3>
-                <p class="text-xs text-neutral-500 mt-0.5">X-axis: Throughput units. Y-axis: GAP Score. Identifies models that are both fast and capable.</p>
+                <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Execution Speed</span>
+                <h3 class="text-base font-semibold text-neutral-900 mt-0.5">Quality vs. Time per Task (TPTask)</h3>
+                <p class="text-xs text-neutral-500 mt-0.5">X-axis: Time per Task in minutes (lower is faster). Y-axis: GAP Score. Top-left is fastest & smartest.</p>
               </div>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200">Speed vs Quality</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200">Lower Min = Faster</span>
             </div>
             <div class="relative w-full h-80 flex-grow">
               <canvas id="speedQualityChart"></canvas>
@@ -507,7 +553,7 @@
               Frontier Model Matrix
             </h2>
             <p class="text-sm text-neutral-600 mt-1">
-              Click ranking tabs to re-rank models by capability score, economic efficiency, or throughput speed.
+              Click ranking tabs to re-rank models by capability score, economic efficiency, or execution time per task in minutes.
             </p>
           </div>
 
@@ -531,8 +577,8 @@
           <button type="button" data-rank="cost" class="rank-tab text-xs font-medium px-3 py-1.5 rounded-lg text-neutral-600 hover:text-neutral-950 hover:bg-white/60 transition-all">
             Lowest Cost (CPTask)
           </button>
-          <button type="button" data-rank="throughput" class="rank-tab text-xs font-medium px-3 py-1.5 rounded-lg text-neutral-600 hover:text-neutral-950 hover:bg-white/60 transition-all">
-            Throughput (TPTask)
+          <button type="button" data-rank="time" class="rank-tab text-xs font-medium px-3 py-1.5 rounded-lg text-neutral-600 hover:text-neutral-950 hover:bg-white/60 transition-all">
+            Fastest Time (TPTask in min)
           </button>
         </div>
 
@@ -584,8 +630,8 @@
                   <th scope="col" class="py-3 px-4 font-semibold">Model</th>
                   <th scope="col" class="py-3 px-4 font-semibold">Author / Lab</th>
                   <th scope="col" class="py-3 px-4 font-semibold text-right">GAP Score</th>
-                  <th scope="col" class="py-3 px-4 font-semibold text-right">Cost (CPTask)</th>
-                  <th scope="col" class="py-3 px-4 font-semibold text-right">Throughput (TPTask)</th>
+                  <th scope="col" class="py-3 px-4 font-semibold text-right">Cost (CPTask in $)</th>
+                  <th scope="col" class="py-3 px-4 font-semibold text-right">Time / Task (TPTask)</th>
                   <th scope="col" class="py-3 px-4 font-semibold text-right">Efficiency Yield</th>
                   <th scope="col" class="py-3 px-4 font-semibold text-center">Type</th>
                 </tr>
@@ -603,8 +649,8 @@
           <!-- Table Bottom Bar -->
           <div class="p-4 bg-neutral-50/50 border-t border-neutral-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-500 font-mono">
             <div class="flex items-center gap-2">
-              <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
-              <span id="footerModelCount">Displaying verified models</span>
+              <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span id="footerModelCount">Auto-sync active · Displaying latest verified models</span>
             </div>
             <div class="flex items-center gap-4">
               <a href="https://gap.sdj.com.np" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline flex items-center gap-1 font-sans font-medium">
@@ -635,7 +681,7 @@
             Direct Model Battle & Trade-Offs
           </h2>
           <p class="text-sm text-neutral-600 mt-1">
-            Compare any two frontier models across reasoning capability, compute cost, and throughput metrics.
+            Compare any two frontier models across reasoning capability, compute cost in USD, and execution time in minutes.
           </p>
         </div>
 
@@ -661,13 +707,13 @@
             <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
               <div class="text-xs font-mono text-neutral-500 uppercase">Cost (CPTask) Delta</div>
               <div id="cmpCostDelta" class="text-2xl font-semibold text-neutral-900 mt-1 tabular-numbers">—</div>
-              <div id="cmpCostSub" class="text-xs text-neutral-500 mt-0.5">Compute cost per problem</div>
+              <div id="cmpCostSub" class="text-xs text-neutral-500 mt-0.5">Compute cost difference per task</div>
             </div>
 
             <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
-              <div class="text-xs font-mono text-neutral-500 uppercase">Throughput (TPTask) Delta</div>
+              <div class="text-xs font-mono text-neutral-500 uppercase">Time (TPTask in min) Delta</div>
               <div id="cmpTpDelta" class="text-2xl font-semibold text-neutral-900 mt-1 tabular-numbers">—</div>
-              <div id="cmpTpSub" class="text-xs text-neutral-500 mt-0.5">Processing speed difference</div>
+              <div id="cmpTpSub" class="text-xs text-neutral-500 mt-0.5">Execution time in minutes difference</div>
             </div>
           </div>
 
@@ -696,7 +742,7 @@
               Traditional benchmarks (MMLU, GSM8K, HumanEval) suffered from pervasive pre-training contamination and dataset memorization. When a model scores high on static test banks, it often repeats memorized patterns rather than demonstrating general intelligence.
             </p>
             <p class="text-neutral-600 text-sm leading-relaxed mb-6">
-              GAP tests genuine out-of-distribution reasoning, multi-step autonomous planning, and real compute cost to establish an ungameable AGI frontier.
+              GAP tests genuine out-of-distribution reasoning, execution time per task in minutes (<span class="font-mono text-xs">TPTask</span>), and real compute cost in USD (<span class="font-mono text-xs">CPTask</span>) to establish an ungameable AGI frontier.
             </p>
 
             <!-- Official Site Box -->
@@ -724,15 +770,15 @@
 
             <div class="p-5 rounded-xl border border-neutral-200 bg-white">
               <div class="w-7 h-7 rounded bg-[#43003b] text-white flex items-center justify-center font-mono text-xs font-semibold mb-3">02</div>
-              <h3 class="text-sm font-semibold text-neutral-950 mb-1.5">Task Processing Throughput (TPTask)</h3>
+              <h3 class="text-sm font-semibold text-neutral-950 mb-1.5">Time per Task in Minutes (TPTask)</h3>
               <p class="text-xs text-neutral-600 leading-relaxed">
-                Measures execution speed and reasoning efficiency over multi-turn autonomous tool operations.
+                Measures wall-clock execution time in minutes taken by the model to synthesize the complete solution (lower is faster).
               </p>
             </div>
 
             <div class="p-5 rounded-xl border border-neutral-200 bg-white">
               <div class="w-7 h-7 rounded bg-[#43003b] text-white flex items-center justify-center font-mono text-xs font-semibold mb-3">03</div>
-              <h3 class="text-sm font-semibold text-neutral-950 mb-1.5">Compute Cost per Task (CPTask)</h3>
+              <h3 class="text-sm font-semibold text-neutral-950 mb-1.5">Compute Cost per Task in USD (CPTask)</h3>
               <p class="text-xs text-neutral-600 leading-relaxed">
                 Tracks dollar cost per completed task to distinguish economically viable models from compute-wasteful ones.
               </p>
@@ -774,7 +820,7 @@
               <svg class="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <p class="mt-3 text-sm text-neutral-600 leading-relaxed border-t border-neutral-100 pt-3">
-              GAP stands for <strong>General AGI Probe</strong>. As tech companies claim they have achieved AGI, GAP independently probes and verifies those claims through rigorous testing of novel reasoning adaptability, execution throughput, and real compute cost.
+              GAP stands for <strong>General AGI Probe</strong>. As tech companies claim they have achieved AGI, GAP independently probes and verifies those claims through rigorous testing of novel reasoning adaptability, execution time in minutes, and real compute cost.
             </p>
           </details>
 
@@ -784,8 +830,8 @@
               <svg class="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <div class="mt-3 text-sm text-neutral-600 leading-relaxed border-t border-neutral-100 pt-3 space-y-2">
-              <p><strong>TPTask (Task Processing Throughput):</strong> Quantifies execution speed, tokens processed per problem, and planning throughput.</p>
-              <p><strong>CPTask (Compute Cost per Task):</strong> Measures inference cost in US Dollars required to execute standardized benchmark tasks.</p>
+              <p><strong>TPTask (Time Per Task):</strong> Wall-clock execution time measured in <strong>minutes</strong> required for the model to finish the standardized benchmark problem. Lower minutes indicate faster completion.</p>
+              <p><strong>CPTask (Compute Cost Per Task):</strong> Measures the inference compute cost in <strong>US Dollars</strong> ($) required to execute each standardized evaluation task.</p>
             </div>
           </details>
 
@@ -805,7 +851,7 @@
               <svg class="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <p class="mt-3 text-sm text-neutral-600 leading-relaxed border-t border-neutral-100 pt-3">
-              GAP uses resilient null-safe parsing: if an evaluated model has no recorded author, missing throughput, or unpriced CPTask, it renders cleanly with fallback indicators without breaking comparative visual charts.
+              GAP uses resilient null-safe parsing: if an evaluated model has no recorded author, missing time per task, or unpriced CPTask, it renders cleanly with fallback indicators without breaking comparative visual charts.
             </p>
           </details>
 
@@ -846,16 +892,17 @@
     </div>
   </footer>
 
-  <!-- SCRIPT: ENGINE, ADVANCED PARETO FRONTIER, EMBEDDED TOWER PLUGINS & LIVE CSV SYNC -->
+  <!-- SCRIPT: ENGINE, ADVANCED PARETO FRONTIER, EMBEDDED TOWER PLUGINS, & CONTINUOUS AUTO-LATEST SYNC -->
   <script>
     const CSV_URL = 'https://leaderboard-5kj.pages.dev/data.csv';
 
     let allModels = [];
     let displayedModels = [];
     let currentFilter = 'all';
-    let currentRankMode = 'score';
+    let currentRankMode = 'score'; // 'score' | 'efficiency' | 'cost' | 'time'
     let currentViewCount = 10;
-    let currentChartView = 'grid'; // 'grid' | 'pareto' | 'scores' | 'efficiency' | 'speed'
+    let currentChartView = 'grid';
+    let lastSyncTimestamp = Date.now();
 
     // Chart instances
     let scoreChart = null;
@@ -899,7 +946,7 @@
       return r;
     }
 
-    // Robust CSV Parser
+    // Robust CSV Parser (TPTask = Time Per Task in minutes!)
     function parseCSV(csvText) {
       if (!csvText || typeof csvText !== 'string') return [];
       const lines = csvText.split(/\r?\n/).filter(l => l.trim().length > 0);
@@ -930,15 +977,15 @@
         const scoreVal = parseFloat(rawScoreStr);
         const score = (!isNaN(scoreVal) && isFinite(scoreVal)) ? scoreVal : 0;
 
-        // Safe TPTask (Throughput)
+        // Safe TPTask (Time Per Task in minutes - lower is faster!)
         const tpVal = parseFloat(rawTPStr);
         const tpTask = (!isNaN(tpVal) && isFinite(tpVal) && tpVal >= 0) ? tpVal : null;
 
-        // Safe CPTask (Cost)
+        // Safe CPTask (Cost Per Task in USD - lower is cheaper!)
         const cpVal = parseFloat(rawCPStr);
         const cpTask = (!isNaN(cpVal) && isFinite(cpVal) && cpVal >= 0) ? cpVal : null;
 
-        // Cost Efficiency = Score / CPTask (division by zero guard)
+        // Cost Efficiency = Score / CPTask (guard division by 0)
         let efficiency = null;
         if (cpTask !== null && cpTask > 0 && score > 0) {
           efficiency = score / cpTask;
@@ -969,29 +1016,38 @@
       return models;
     }
 
-    // FETCH DATA OVER THE NETWORK EVERY TIME
+    // AUTO-LATEST FETCH OVER THE NETWORK EACH AND EVERY TIME
     async function loadData() {
       const refreshSvg = document.getElementById('refreshSvg');
+      const syncStatusText = document.getElementById('syncStatusText');
       if (refreshSvg) refreshSvg.classList.add('animate-spin');
 
       try {
+        // Aggressive cache-busting ensures fresh data every single request
         const cacheBust = `?_t=${Date.now()}`;
         const res = await fetch(CSV_URL + cacheBust, {
           cache: 'no-store',
-          headers: { 'Accept': 'text/csv, text/plain, */*' }
+          headers: {
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache',
+            'Accept': 'text/csv, text/plain, */*'
+          }
         });
 
         if (!res.ok) throw new Error('Network error');
         const text = await res.text();
         allModels = parseCSV(text);
+        lastSyncTimestamp = Date.now();
+        if (syncStatusText) syncStatusText.textContent = 'Auto-Synced Live';
       } catch (err) {
-        console.warn('Network fetch error, falling back to local dataset mirror:', err);
+        console.warn('Live endpoint sync notice, falling back to local dataset mirror:', err);
         try {
-          const localRes = await fetch('data.csv');
+          const localRes = await fetch('data.csv?_t=' + Date.now(), { cache: 'no-store' });
           const localText = await localRes.text();
           allModels = parseCSV(localText);
+          if (syncStatusText) syncStatusText.textContent = 'Cached Mirror';
         } catch (localErr) {
-          console.error('All fetches failed:', localErr);
+          console.error('All data sync attempts failed:', localErr);
         }
       } finally {
         if (refreshSvg) {
@@ -1029,9 +1085,11 @@
           case 'efficiency':
             return (b.efficiency === null ? -1 : b.efficiency) - (a.efficiency === null ? -1 : a.efficiency);
           case 'cost':
+            // Lower cost is better
             return (a.cpTask === null ? 999999 : a.cpTask) - (b.cpTask === null ? 999999 : b.cpTask);
-          case 'throughput':
-            return (b.tpTask === null ? -1 : b.tpTask) - (a.tpTask === null ? -1 : a.tpTask);
+          case 'time':
+            // TPTask is Time Per Task in minutes -> Lower minutes is faster / better!
+            return (a.tpTask === null ? 999999 : a.tpTask) - (b.tpTask === null ? 999999 : b.tpTask);
           default:
             return b.score - a.score;
         }
@@ -1077,13 +1135,13 @@
         effValEl.textContent = `${validEff[0].efficiency.toFixed(3)} Score/$`;
       }
 
-      // Lowest Cost
-      const validCost = allModels.filter(m => m.cpTask !== null).sort((a, b) => a.cpTask - b.cpTask);
-      const costModelEl = document.getElementById('statLowestCost');
-      const costValEl = document.getElementById('statLowestCostVal');
-      if (costModelEl && validCost.length > 0) {
-        costModelEl.textContent = capitalize(validCost[0].modelName);
-        costValEl.textContent = `$${validCost[0].cpTask.toFixed(1)} / task`;
+      // Fastest Time Per Task in Minutes (Lower is Faster!)
+      const validTime = allModels.filter(m => m.tpTask !== null).sort((a, b) => a.tpTask - b.tpTask);
+      const timeModelEl = document.getElementById('statFastestTime');
+      const timeValEl = document.getElementById('statFastestTimeVal');
+      if (timeModelEl && validTime.length > 0) {
+        timeModelEl.textContent = capitalize(validTime[0].modelName);
+        timeValEl.textContent = `${validTime[0].tpTask} min / task`;
       }
 
       // Total count
@@ -1097,11 +1155,11 @@
           : `Top ${displayedModels.length} of ${allModels.length} Models`;
       }
       if (footerCount) {
-        footerCount.textContent = `Displaying ${displayedModels.length} of ${allModels.length} evaluated models`;
+        footerCount.textContent = `Auto-synced live · Displaying ${displayedModels.length} of ${allModels.length} evaluated models`;
       }
     }
 
-    // RENDER TABLE ROWS (WITH INLINE SCORE BARS & LOGOS)
+    // RENDER TABLE ROWS (TPTask = Time Per Task in Minutes!)
     function renderTable() {
       const tbody = document.getElementById('leaderboardBody');
       if (!tbody) return;
@@ -1127,7 +1185,8 @@
                           `<span class="text-neutral-500 font-mono text-xs">${m.currentRank}</span>`;
 
         const costDisplay = m.cpTask !== null ? `$${m.cpTask.toFixed(1)}` : `<span class="text-neutral-300">—</span>`;
-        const tpDisplay = m.tpTask !== null ? m.tpTask.toLocaleString() : `<span class="text-neutral-300">—</span>`;
+        // TPTask is Time Per Task in Minutes!
+        const tpDisplay = m.tpTask !== null ? `${m.tpTask} min` : `<span class="text-neutral-300">—</span>`;
         const effDisplay = m.efficiency !== null ? m.efficiency.toFixed(3) : `<span class="text-neutral-300">—</span>`;
 
         const typeBadge = m.isOpenSource
@@ -1179,8 +1238,7 @@
           ctx.font = '600 11px Inter, sans-serif';
 
           if (chart.config.options.indexAxis === 'y') {
-            // Horizontal Bar: Score inside bar or right beside it
-            const text = typeof val === 'number' ? val.toFixed(2) : String(val);
+            const text = typeof val === 'number' ? (val < 10 ? val.toFixed(2) : `${val}m`) : String(val);
             const textWidth = ctx.measureText(text).width;
             const barWidth = Math.abs(bar.x - bar.base);
 
@@ -1196,8 +1254,7 @@
               ctx.fillText(text, bar.x + 8, bar.y);
             }
           } else {
-            // Vertical Tower: Score inside tower near the top
-            const text = typeof val === 'number' ? (val < 10 ? val.toFixed(2) : Math.round(val).toString()) : String(val);
+            const text = typeof val === 'number' ? (val < 10 ? val.toFixed(2) : `${val}m`) : String(val);
             const barHeight = Math.abs(bar.base - bar.y);
 
             if (barHeight > 24) {
@@ -1246,7 +1303,7 @@
           },
           plugins: [scoreInBarPlugin],
           options: {
-            indexAxis: 'y', // Horizontal bars: model names have full space on Y axis!
+            indexAxis: 'y',
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
@@ -1294,8 +1351,6 @@
           author: capitalize(m.author)
         }));
 
-        // Compute Pareto frontier points (models not dominated by any other: cheaper AND smarter)
-        // Sort by cost ascending
         const sortedByCost = [...validModels].sort((a, b) => a.cpTask - b.cpTask);
         const paretoPoints = [];
         let maxScoreSeen = -Infinity;
@@ -1416,7 +1471,7 @@
         });
       }
 
-      // CHART 4: QUALITY VS SPEED (TPTask Throughput Scatter)
+      // CHART 4: QUALITY VS TIME PER TASK IN MINUTES (TPTask)
       const ctxSpeed = document.getElementById('speedQualityChart');
       if (ctxSpeed) {
         if (speedQualityChart) speedQualityChart.destroy();
@@ -1424,7 +1479,7 @@
         const speedData = allModels
           .filter(m => m.tpTask !== null && m.score !== null)
           .map(m => ({
-            x: m.tpTask,
+            x: m.tpTask, // Time per Task in Minutes!
             y: m.score,
             name: capitalize(m.modelName)
           }));
@@ -1452,13 +1507,13 @@
                 cornerRadius: 6,
                 callbacks: {
                   title: (items) => items[0].raw.name,
-                  label: (ctx) => `Score: ${ctx.raw.y.toFixed(2)} | Throughput: ${ctx.raw.x.toLocaleString()}`
+                  label: (ctx) => `Score: ${ctx.raw.y.toFixed(2)} | Time: ${ctx.raw.x} min`
                 }
               }
             },
             scales: {
               x: {
-                title: { display: true, text: 'Throughput (TPTask) (Higher is Faster)', font: { size: 10 } },
+                title: { display: true, text: 'Time per Task (Minutes) — Lower is Faster', font: { size: 10 } },
                 grid: { color: '#f4f4f5' }
               },
               y: {
@@ -1471,7 +1526,7 @@
       }
     }
 
-    // UPDATE CHART VIEW MODE (GRID vs SINGLE FOCUSED VIEW)
+    // UPDATE CHART VIEW MODE
     function setChartView(mode) {
       currentChartView = mode;
       const cPareto = document.getElementById('cardPareto');
@@ -1494,7 +1549,6 @@
         cSpeed.classList.toggle('hidden', mode !== 'speed');
       }
 
-      // Re-trigger chart resize
       setTimeout(() => {
         if (scoreChart) scoreChart.resize();
         if (scatterChart) scatterChart.resize();
@@ -1503,7 +1557,7 @@
       }, 50);
     }
 
-    // COMPARE SELECTORS
+    // COMPARE SELECTORS (HEAD TO HEAD)
     function populateCompareSelectors() {
       const selA = document.getElementById('compareModelA');
       const selB = document.getElementById('compareModelB');
@@ -1559,40 +1613,41 @@
         }
       }
 
-      // TP Delta
+      // Time (TPTask in Minutes!) Delta
       const tpDeltaEl = document.getElementById('cmpTpDelta');
       const tpSubEl = document.getElementById('cmpTpSub');
       if (tpDeltaEl) {
         if (mA.tpTask !== null && mB.tpTask !== null) {
-          const tpDiff = mA.tpTask - mB.tpTask;
-          tpDeltaEl.innerHTML = tpDiff >= 0 
-            ? `<span class="text-blue-600">+${tpDiff}</span>` 
-            : `<span class="text-neutral-700">${tpDiff}</span>`;
-          tpSubEl.textContent = `${mA.tpTask} vs ${mB.tpTask} throughput`;
+          const timeDiff = mA.tpTask - mB.tpTask;
+          // In time, fewer minutes is faster!
+          tpDeltaEl.innerHTML = timeDiff < 0 
+            ? `<span class="text-emerald-600">${timeDiff} min (faster)</span>` 
+            : (timeDiff === 0 ? `<span class="text-neutral-700">0 min</span>` : `<span class="text-neutral-900">+${timeDiff} min (slower)</span>`);
+          tpSubEl.textContent = `${mA.tpTask} min vs ${mB.tpTask} min per task`;
         } else {
           tpDeltaEl.textContent = '—';
-          tpSubEl.textContent = 'Missing throughput data';
+          tpSubEl.textContent = 'Missing execution time data';
         }
       }
 
-      // Analysis text
+      // Synthesis text
       const analysisEl = document.getElementById('cmpAnalysisText');
       if (analysisEl) {
         if (mA.id === mB.id) {
           analysisEl.innerHTML = `<strong>Identical model selected.</strong> Choose two distinct frontier models to analyze performance trade-offs.`;
         } else {
           const winner = mA.score >= mB.score ? mA : mB;
-          const cheaper = (mA.cpTask !== null && mB.cpTask !== null) ? (mA.cpTask <= mB.cpTask ? mA : mB) : null;
-          let summary = `<strong>Synthesis:</strong> ${capitalize(winner.modelName)} leads with a GAP Score of ${winner.score.toFixed(2)}. `;
-          if (cheaper) {
-            summary += `${capitalize(cheaper.modelName)} is more economical at $${cheaper.cpTask} per task. `;
+          const faster = (mA.tpTask !== null && mB.tpTask !== null) ? (mA.tpTask <= mB.tpTask ? mA : mB) : null;
+          let summary = `<strong>Synthesis:</strong> ${capitalize(winner.modelName)} leads reasoning with a GAP Score of ${winner.score.toFixed(2)}. `;
+          if (faster) {
+            summary += `${capitalize(faster.modelName)} completes tasks faster at ${faster.tpTask} minutes per task. `;
           }
           analysisEl.innerHTML = summary;
         }
       }
     }
 
-    // INITIALIZATION & EVENT HANDLERS
+    // INITIALIZATION & CONTINUOUS AUTO-LATEST SYNC HANDLERS
     document.addEventListener('DOMContentLoaded', () => {
       const refreshBtn = document.getElementById('refreshBtn');
       if (refreshBtn) refreshBtn.addEventListener('click', loadData);
@@ -1641,7 +1696,7 @@
         });
       });
 
-      // View count select (10 / 25 / all)
+      // View count select
       const viewSelect = document.getElementById('viewCountSelect');
       if (viewSelect) {
         viewSelect.addEventListener('change', (e) => {
@@ -1650,7 +1705,7 @@
         });
       }
 
-      // Compare model selectors
+      // Compare selectors
       const selA = document.getElementById('compareModelA');
       const selB = document.getElementById('compareModelB');
       if (selA) selA.addEventListener('change', updateComparison);
@@ -1670,8 +1725,26 @@
         });
       }
 
-      // Initial load
+      // AUTO-LATEST EACH AND EVERY TIME:
+      // 1. Initial immediate load
       loadData();
+
+      // 2. Continuous background auto-polling every 30 seconds
+      setInterval(() => {
+        loadData();
+      }, 30000);
+
+      // 3. Auto-sync on window focus
+      window.addEventListener('focus', () => {
+        loadData();
+      });
+
+      // 4. Auto-sync when tab visibility restores
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+          loadData();
+        }
+      });
     });
   </script>
 
