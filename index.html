@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>GAP Benchmark — General AGI Problem | Independent Frontier AI Leaderboard</title>
+  <meta name="title" content="GAP Benchmark — General AGI Problem | Independent Frontier AI Leaderboard">
+  <meta name="description" content="Independent scientific benchmark evaluating frontier AI models against Artificial General Intelligence (AGI) claims. Objective rankings by GAP Score, compute cost (CPTask), and throughput (TPTask).">
+  <meta name="keywords" content="GAP benchmark, General AGI Problem, AGI benchmark, frontier AI evaluation, LLM leaderboard, artificial general intelligence test, AI cost per task, CPTask, TPTask, OpenAI, Anthropic">
+  <meta name="author" content="GAP Benchmark Initiative">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://gap.sdj.com.np/">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gap.sdj.com.np/">
+  <meta property="og:site_name" content="GAP Benchmark">
+  <meta property="og:title" content="GAP Benchmark — General AGI Problem | Independent Frontier AI Leaderboard">
+  <meta property="og:description" content="Independent scientific benchmark evaluating frontier AI models against Artificial General Intelligence (AGI) claims. Real-time scores, compute cost (CPTask), and throughput rankings.">
+  <meta property="og:image" content="https://gap.sdj.com.np/og-image.png">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@GAP_benchmark">
+  <meta name="twitter:creator" content="@GAP_benchmark">
+  <meta name="twitter:url" content="https://gap.sdj.com.np/">
+  <meta name="twitter:title" content="GAP Benchmark — General AGI Problem Leaderboard">
+  <meta name="twitter:description" content="Testing AI models against real AGI claims. Live benchmark scores, cost per task (CPTask), and task processing throughput (TPTask).">
+  <meta name="twitter:image" content="https://gap.sdj.com.np/og-image.png">
+
+  <!-- JSON-LD Structured Data for Maximum Search Engine Indexing -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://gap.sdj.com.np/#website",
+        "url": "https://gap.sdj.com.np/",
+        "name": "GAP Benchmark",
+        "description": "General AGI Problem — Independent Frontier AI Evaluation & Leaderboard",
+        "publisher": {
+          "@type": "Organization",
+          "name": "GAP Benchmark",
+          "url": "https://gap.sdj.com.np",
+          "sameAs": [
+            "https://github.com/GAP-benchmark",
+            "https://x.com/GAP_benchmark",
+            "https://huggingface.co/GAP-benchmark"
+          ]
+        }
+      },
+      {
+        "@type": "Dataset",
+        "@id": "https://gap.sdj.com.np/#dataset",
+        "name": "GAP Benchmark: General AGI Problem Frontier Model Dataset",
+        "description": "Empirical evaluation metrics measuring frontier AI model performance, reasoning scores, task processing throughput (TPTask), compute cost per task (CPTask), and open source status.",
+        "url": "https://gap.sdj.com.np/",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "isAccessibleForFree": true,
+        "creator": {
+          "@type": "Organization",
+          "name": "GAP Benchmark Initiative",
+          "url": "https://github.com/GAP-benchmark"
+        },
+        "distribution": [
+          {
+            "@type": "DataDownload",
+            "encodingFormat": "text/csv",
+            "contentUrl": "https://leaderboard-5kj.pages.dev/data.csv"
+          }
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://gap.sdj.com.np/#organization",
+        "name": "GAP Benchmark",
+        "alternateName": "General AGI Problem",
+        "url": "https://gap.sdj.com.np",
+        "logo": "https://gap.sdj.com.np/logo.png",
+        "sameAs": [
+          "https://github.com/GAP-benchmark",
+          "https://x.com/GAP_benchmark",
+          "https://huggingface.co/GAP-benchmark"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://gap.sdj.com.np/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the GAP Benchmark?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GAP stands for General AGI Problem. As commercial and research AI labs claim to achieve Artificial General Intelligence (AGI), GAP provides an independent, uncontaminated scientific test suite to verify whether frontier models demonstrate true generalization, multi-step autonomous reasoning, and economic feasibility."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What do TPTask and CPTask mean in the leaderboard?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TPTask (Throughput per Task / Time per Task) measures the execution efficiency and reasoning steps required by a model to complete complex evaluation tasks. CPTask (Cost per Task / Compute Index) quantifies the monetary or compute expense per standardized evaluation task."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where does the benchmark data come from?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All benchmark evaluations are streamed live from the official GAP verified endpoint at https://leaderboard-5kj.pages.dev/data.csv. The leaderboard strictly displays top 10 models with zero artificial or synthetic data."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does GAP calculate Cost Efficiency?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cost efficiency is calculated as the model's GAP AGI Score divided by its CPTask (Cost per Task). This reveals which model provides the highest intelligence per dollar invested in inference compute."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class', // Forced light mode by default
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace'],
+            serif: ['Newsreader', 'Georgia', 'serif'],
+          },
+          colors: {
+            brand: {
+              blue: '#0066cc',        // Apple Action Blue
+              'blue-hover': '#0052a3',
+              plum: '#43003b',        // Artificial Analysis Primary
+              'plum-light': '#8842fd',
+              ink: '#111827',         // Vercel / Apple ink
+              body: '#374151',
+              muted: '#6b7280',
+              faint: '#9ca3af',
+              parchment: '#f8f9fa',   // Apple parchment / subtle canvas
+              elevated: '#ffffff',
+              hairline: '#e5e7eb',    // 1px hairline border
+              'hairline-subtle': '#f3f4f6'
+            }
+          },
+          letterSpacing: {
+            'tight-apple': '-0.022em',
+            'tight-hero': '-0.035em'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <style>
+    /* Design System Cross: Apple Restraint + Vercel Precision + Artificial Analysis Authority */
+    :root {
+      --color-primary: #0066cc;
+      --color-plum: #43003b;
+      --color-ink: #111827;
+      --color-canvas: #ffffff;
+      --color-parchment: #f8f9fa;
+      --color-hairline: #e5e7eb;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #111827;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Apple-style tight tracking on display headings */
+    .tracking-display {
+      letter-spacing: -0.025em;
+    }
+    .tracking-hero {
+      letter-spacing: -0.038em;
+    }
+
+    /* Micro-interaction on action buttons */
+    .btn-press:active {
+      transform: scale(0.97);
+    }
+
+    /* Hairline cards inspired by Vercel Geist */
+    .hairline-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+    }
+    .hairline-card:hover {
+      border-color: #d1d5db;
+      box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Subtle table zebra styling */
+    .table-row-hover:hover {
+      background-color: #fbfbfd;
+    }
+
+    /* Custom thin scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f8f9fa;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9ca3af;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-white text-neutral-900 selection:bg-neutral-900 selection:text-white">
+
+  <!-- TOP GLOBAL NAV BAR (Apple Slim + Vercel Precision) -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-200/80 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+      
+      <!-- Logo & Brand -->
+      <a href="#" class="flex items-center gap-2.5 group" aria-label="GAP Benchmark Home">
+        <div class="w-7 h-7 rounded-md bg-neutral-950 text-white flex items-center justify-center font-mono font-bold text-xs tracking-wider shadow-sm group-hover:bg-neutral-800 transition-colors">
+          GAP
+        </div>
+        <div class="flex items-baseline gap-1.5">
+          <span class="font-semibold text-base tracking-tight text-neutral-900 font-sans">GAP</span>
+          <span class="text-xs font-mono uppercase tracking-wider text-neutral-500 hidden sm:inline">General AGI Problem</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm text-neutral-600 font-medium" aria-label="Main Navigation">
+        <a href="#leaderboard" class="hover:text-neutral-950 transition-colors">Leaderboard</a>
+        <a href="#charts" class="hover:text-neutral-950 transition-colors">Analytics & Charts</a>
+        <a href="#compare" class="hover:text-neutral-950 transition-colors">Head-to-Head</a>
+        <a href="#methodology" class="hover:text-neutral-950 transition-colors">Methodology</a>
+        <a href="#faq" class="hover:text-neutral-950 transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Right Action Cluster: External Links & Live Status -->
+      <div class="flex items-center gap-2.5">
+        <!-- Live Endpoint Pulse Badge -->
+        <div id="liveStatusBadge" class="hidden sm:flex items-center gap-1.5 text-xs font-mono text-neutral-600 bg-neutral-100 border border-neutral-200/80 rounded-full px-2.5 py-1" title="Data fetched directly from live CSV endpoint">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span id="liveStatusText">Live Data</span>
+        </div>
+
+        <!-- GitHub Link -->
+        <a href="https://github.com/GAP-benchmark" target="_blank" rel="noopener noreferrer" 
+           class="p-1.5 text-neutral-500 hover:text-neutral-950 hover:bg-neutral-100 rounded-md transition-colors" 
+           aria-label="GitHub Repository">
+          <i data-lucide="github" class="w-4 h-4"></i>
+        </a>
+
+        <!-- Hugging Face Link -->
+        <a href="https://huggingface.co/GAP-benchmark" target="_blank" rel="noopener noreferrer" 
+           class="p-1.5 text-neutral-500 hover:text-neutral-950 hover:bg-neutral-100 rounded-md transition-colors" 
+           aria-label="Hugging Face Organization">
+          <span class="font-mono text-xs font-bold leading-none px-1 py-0.5 rounded bg-amber-100 text-amber-900">HF</span>
+        </a>
+
+        <!-- X (Twitter) Link -->
+        <a href="https://x.com/GAP_benchmark" target="_blank" rel="noopener noreferrer" 
+           class="p-1.5 text-neutral-500 hover:text-neutral-950 hover:bg-neutral-100 rounded-md transition-colors" 
+           aria-label="X Twitter Account">
+          <i data-lucide="twitter" class="w-4 h-4"></i>
+        </a>
+
+        <!-- Direct CSV Download Button -->
+        <a href="https://leaderboard-5kj.pages.dev/data.csv" target="_blank" rel="noopener noreferrer" 
+           class="btn-press ml-1 hidden lg:inline-flex items-center gap-1.5 text-xs font-medium text-white bg-neutral-900 hover:bg-neutral-800 rounded-full px-3.5 py-1.5 transition-colors shadow-sm">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          <span>data.csv</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" type="button" class="md:hidden p-1.5 text-neutral-600 hover:text-neutral-950 rounded-md" aria-label="Toggle Mobile Menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden border-b border-neutral-200 bg-white px-4 pt-2 pb-4 space-y-2">
+      <a href="#leaderboard" class="block px-3 py-2 text-sm font-medium text-neutral-800 rounded-md hover:bg-neutral-50">Leaderboard</a>
+      <a href="#charts" class="block px-3 py-2 text-sm font-medium text-neutral-800 rounded-md hover:bg-neutral-50">Analytics & Charts</a>
+      <a href="#compare" class="block px-3 py-2 text-sm font-medium text-neutral-800 rounded-md hover:bg-neutral-50">Head-to-Head Compare</a>
+      <a href="#methodology" class="block px-3 py-2 text-sm font-medium text-neutral-800 rounded-md hover:bg-neutral-50">Methodology & Pillars</a>
+      <a href="#faq" class="block px-3 py-2 text-sm font-medium text-neutral-800 rounded-md hover:bg-neutral-50">FAQ</a>
+      <div class="pt-2 border-t border-neutral-100 flex items-center justify-between text-xs font-mono text-neutral-500">
+        <a href="https://leaderboard-5kj.pages.dev/data.csv" class="text-blue-600 font-medium">Download data.csv</a>
+        <span>Top 10 Live</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT AREA -->
+  <main class="flex-grow">
+
+    <!-- HERO SECTION (Apple Calm + Vercel Typographic Tightness + Artificial Analysis Authority) -->
+    <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 border-b border-neutral-200/80 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Technical Eyebrow -->
+        <div class="flex items-center gap-2 mb-4">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-neutral-100 text-neutral-800 border border-neutral-200/70">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+            INDEPENDENT EVALUATION · GENERAL AGI PROBLEM
+          </span>
+          <span class="text-xs font-mono text-neutral-400 hidden sm:inline">NO SPONSORED BIAS · NO MEMORIZATION</span>
+        </div>
+
+        <!-- Main Hero H1 (Apple tight typography, confident, zero AI slop) -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-neutral-950 tracking-hero max-w-4xl leading-[1.08] mb-6">
+          Testing AI models against real AGI claims.
+        </h1>
+
+        <!-- Subtitle: Editorial, precise, direct -->
+        <p class="text-lg sm:text-xl text-neutral-600 font-normal leading-relaxed max-w-3xl mb-8">
+          Every major lab now claims to approach Artificial General Intelligence. 
+          <strong class="text-neutral-900 font-semibold">GAP (General AGI Problem)</strong> subjects frontier models to rigorous, uncontaminated generalization tests, tracking true reasoning capability, compute cost per task (<span class="font-mono text-sm bg-neutral-100 px-1 py-0.5 rounded text-neutral-800">CPTask</span>), and throughput (<span class="font-mono text-sm bg-neutral-100 px-1 py-0.5 rounded text-neutral-800">TPTask</span>).
+        </p>
+
+        <!-- CTA Row: Apple action blue pill + ghost pills -->
+        <div class="flex flex-wrap items-center gap-3.5 mb-14">
+          <a href="#leaderboard" class="btn-press inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium text-white bg-[#0066cc] hover:bg-[#0052a3] transition-colors shadow-sm">
+            <span>View Top 10 Models</span>
+            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+          </a>
+
+          <a href="#charts" class="btn-press inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium text-neutral-800 bg-neutral-100 hover:bg-neutral-200/80 border border-neutral-200 transition-colors">
+            <i data-lucide="bar-chart-2" class="w-4 h-4 text-neutral-600"></i>
+            <span>Interactive Charts</span>
+          </a>
+
+          <button id="refreshLiveBtn" type="button" class="btn-press inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-mono text-neutral-600 bg-white hover:bg-neutral-50 border border-neutral-300 transition-colors ml-auto sm:ml-0" title="Re-fetch data directly from leaderboard-5kj.pages.dev/data.csv">
+            <i data-lucide="refresh-cw" id="refreshIcon" class="w-3.5 h-3.5 text-neutral-500"></i>
+            <span>Fetch Live CSV</span>
+          </button>
+        </div>
+
+        <!-- KEY METRIC SUMMARY TILES (Inspired by Artificial Analysis KPI Strip) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          
+          <!-- Stat 1: Top Ranked Model -->
+          <div class="hairline-card rounded-xl p-4 sm:p-5">
+            <div class="text-xs font-mono uppercase tracking-wider text-neutral-500 mb-1 flex items-center justify-between">
+              <span>#1 Ranked Leader</span>
+              <i data-lucide="award" class="w-3.5 h-3.5 text-amber-500"></i>
+            </div>
+            <div id="statTopModel" class="text-xl sm:text-2xl font-semibold text-neutral-950 tracking-tight truncate">
+              Loading...
+            </div>
+            <div id="statTopScore" class="text-xs text-neutral-500 mt-1 font-mono">
+              Score: —
+            </div>
+          </div>
+
+          <!-- Stat 2: Highest Efficiency (Score / Cost) -->
+          <div class="hairline-card rounded-xl p-4 sm:p-5">
+            <div class="text-xs font-mono uppercase tracking-wider text-neutral-500 mb-1 flex items-center justify-between">
+              <span>Best Cost/Perf</span>
+              <i data-lucide="trending-up" class="w-3.5 h-3.5 text-emerald-600"></i>
+            </div>
+            <div id="statBestEfficiency" class="text-xl sm:text-2xl font-semibold text-neutral-950 tracking-tight truncate">
+              Loading...
+            </div>
+            <div id="statBestEffValue" class="text-xs text-neutral-500 mt-1 font-mono">
+              Ratio: —
+            </div>
+          </div>
+
+          <!-- Stat 3: Lowest Task Cost -->
+          <div class="hairline-card rounded-xl p-4 sm:p-5">
+            <div class="text-xs font-mono uppercase tracking-wider text-neutral-500 mb-1 flex items-center justify-between">
+              <span>Lowest Cost Task</span>
+              <i data-lucide="coins" class="w-3.5 h-3.5 text-blue-600"></i>
+            </div>
+            <div id="statLowestCost" class="text-xl sm:text-2xl font-semibold text-neutral-950 tracking-tight truncate">
+              Loading...
+            </div>
+            <div id="statLowestCostVal" class="text-xs text-neutral-500 mt-1 font-mono">
+              CPTask: —
+            </div>
+          </div>
+
+          <!-- Stat 4: Models Benchmarked -->
+          <div class="hairline-card rounded-xl p-4 sm:p-5">
+            <div class="text-xs font-mono uppercase tracking-wider text-neutral-500 mb-1 flex items-center justify-between">
+              <span>Ranked Models</span>
+              <i data-lucide="layers" class="w-3.5 h-3.5 text-neutral-500"></i>
+            </div>
+            <div id="statModelCount" class="text-xl sm:text-2xl font-semibold text-neutral-950 tracking-tight">
+              Top 10
+            </div>
+            <div class="text-xs text-neutral-500 mt-1 font-mono">
+              Live from Cloudflare
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: LIVE LEADERBOARD TABLE (Apple Clean Parchment + Artificial Analysis Precision) -->
+    <section id="leaderboard" class="py-14 bg-[#f8f9fa] border-b border-neutral-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <div class="text-xs font-mono uppercase tracking-wider text-neutral-500 mb-1">
+              EMPIRICAL BENCHMARK RANKING
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-semibold text-neutral-950 tracking-display">
+              General AGI Problem Leaderboard
+            </h2>
+            <p class="text-sm text-neutral-600 mt-1 max-w-2xl">
+              Evaluated on novel algorithmic reasoning, multi-step problem solving, and autonomous execution. 
+              Strictly showing verified frontier models (top 10 maximum) with zero synthetic data.
+            </p>
+          </div>
+
+          <!-- Live Endpoint Info Note -->
+          <div class="flex items-center gap-2 text-xs font-mono text-neutral-500 bg-white border border-neutral-200 rounded-lg px-3 py-2 shrink-0">
+            <i data-lucide="database" class="w-3.5 h-3.5 text-neutral-400"></i>
+            <span>Endpoint: <code class="text-neutral-800 font-semibold">data.csv</code></span>
+            <span class="text-neutral-300">|</span>
+            <span id="dataTimestamp" class="text-neutral-600">Checking...</span>
+          </div>
+        </div>
+
+        <!-- Filter & Search Control Toolbar -->
+        <div class="hairline-card rounded-t-xl p-3.5 sm:p-4 bg-white border-b-0 flex flex-col sm:flex-row items-center justify-between gap-3">
+          
+          <!-- Search input -->
+          <div class="relative w-full sm:w-72">
+            <i data-lucide="search" class="w-4 h-4 text-neutral-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+            <input id="searchInput" type="text" placeholder="Search model or lab..." 
+                   class="w-full pl-9 pr-3 py-1.5 text-sm bg-neutral-50 border border-neutral-200 rounded-md focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-sans text-neutral-900 placeholder-neutral-400">
+          </div>
+
+          <!-- License Filter Pills -->
+          <div class="flex items-center gap-1.5 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0">
+            <span class="text-xs font-mono text-neutral-400 mr-1 hidden lg:inline">FILTER:</span>
+            <button type="button" data-filter="all" class="filter-pill active text-xs font-medium px-3 py-1 rounded-full bg-neutral-900 text-white transition-colors">
+              All Models
+            </button>
+            <button type="button" data-filter="opensource" class="filter-pill text-xs font-medium px-3 py-1 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-700 transition-colors">
+              Open Weights
+            </button>
+            <button type="button" data-filter="proprietary" class="filter-pill text-xs font-medium px-3 py-1 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-700 transition-colors">
+              Proprietary API
+            </button>
+          </div>
+
+          <!-- Sort Selector -->
+          <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+            <label for="sortSelect" class="text-xs font-mono text-neutral-500 shrink-0">SORT BY:</label>
+            <select id="sortSelect" class="text-xs font-medium bg-neutral-50 border border-neutral-200 rounded-md px-2.5 py-1.5 text-neutral-800 focus:outline-none focus:border-blue-500">
+              <option value="score_desc">GAP Score (High → Low)</option>
+              <option value="score_asc">GAP Score (Low → High)</option>
+              <option value="cost_asc">Cost / CPTask (Low → High)</option>
+              <option value="cost_desc">Cost / CPTask (High → Low)</option>
+              <option value="tp_desc">Throughput / TPTask (High → Low)</option>
+              <option value="eff_desc">Cost Efficiency (High → Low)</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Leaderboard Table Container -->
+        <div class="hairline-card rounded-b-xl overflow-hidden bg-white">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse" id="leaderboardTable">
+              <caption class="sr-only">GAP Benchmark Top 10 Frontier AI Models Leaderboard</caption>
+              <thead>
+                <tr class="border-b border-neutral-200 bg-neutral-50/80 text-[11px] font-mono uppercase tracking-wider text-neutral-500 select-none">
+                  <th scope="col" class="py-3 px-4 font-semibold text-center w-14">Rank</th>
+                  <th scope="col" class="py-3 px-4 font-semibold">Model & Version</th>
+                  <th scope="col" class="py-3 px-4 font-semibold">Lab / Author</th>
+                  <th scope="col" class="py-3 px-4 font-semibold text-right">
+                    <span class="inline-flex items-center gap-1 cursor-pointer hover:text-neutral-900" title="Overall General AGI Score (Higher is better)">
+                      GAP Score <i data-lucide="help-circle" class="w-3 h-3 text-neutral-400"></i>
+                    </span>
+                  </th>
+                  <th scope="col" class="py-3 px-4 font-semibold text-right">
+                    <span class="inline-flex items-center gap-1 cursor-pointer hover:text-neutral-900" title="Cost Per Task / Compute index (Lower is cheaper)">
+                      CPTask ($) <i data-lucide="help-circle" class="w-3 h-3 text-neutral-400"></i>
+                    </span>
+                  </th>
+                  <th scope="col" class="py-3 px-4 font-semibold text-right">
+                    <span class="inline-flex items-center gap-1 cursor-pointer hover:text-neutral-900" title="Throughput / Task latency index (Higher is faster)">
+                      TPTask <i data-lucide="help-circle" class="w-3 h-3 text-neutral-400"></i>
+                    </span>
+                  </th>
+                  <th scope="col" class="py-3 px-4 font-semibold text-right">
+                    <span class="inline-flex items-center gap-1 cursor-pointer hover:text-neutral-900" title="Score divided by Cost (Higher is more cost-effective)">
+                      Cost Efficiency <i data-lucide="help-circle" class="w-3 h-3 text-neutral-400"></i>
+                    </span>
+                  </th>
+                  <th scope="col" class="py-3 px-4 font-semibold text-center">License</th>
+                </tr>
+              </thead>
+              <tbody id="leaderboardBody" class="divide-y divide-neutral-100 text-sm">
+                <!-- Dynamically rendered rows from live CSV -->
+                <tr>
+                  <td colspan="8" class="py-12 text-center text-neutral-500 font-mono text-xs">
+                    <div class="inline-flex items-center gap-2">
+                      <i data-lucide="loader-2" class="w-4 h-4 animate-spin text-neutral-400"></i>
+                      <span>Fetching verified data from leaderboard-5kj.pages.dev/data.csv...</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Table Footer Notes & Metrics Definitions -->
+          <div class="p-4 bg-neutral-50/60 border-t border-neutral-100 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-neutral-500 font-mono">
+            <div class="flex items-center gap-2">
+              <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span>Showing verified top models (Max 10). Graceful fallback on missing attributes.</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <a href="https://leaderboard-5kj.pages.dev/data.csv" target="_blank" class="text-blue-600 hover:underline flex items-center gap-1">
+                <i data-lucide="external-link" class="w-3 h-3"></i> Raw CSV Endpoint
+              </a>
+              <span class="text-neutral-300">|</span>
+              <button id="copyJsonBtn" type="button" class="text-neutral-700 hover:text-neutral-950 flex items-center gap-1">
+                <i data-lucide="copy" class="w-3 h-3"></i> Copy Data JSON
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE BENCHMARK CHARTS ("make defferent kinda charts") -->
+    <section id="charts" class="py-16 bg-white border-b border-neutral-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="mb-10 text-center max-w-3xl mx-auto">
+          <div class="text-xs font-mono uppercase tracking-wider text-neutral-500 mb-1">
+            DATA VISUALIZATION & COMPARATIVE ANALYSIS
+          </div>
+          <h2 class="text-3xl font-semibold text-neutral-950 tracking-display">
+            Benchmark Metrics & Frontiers
+          </h2>
+          <p class="text-sm sm:text-base text-neutral-600 mt-2">
+            Multi-dimensional analytical views: capability scores, Pareto cost tradeoffs, efficiency yields, and throughput dynamics.
+          </p>
+        </div>
+
+        <!-- Grid of 4 Different Charts -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          
+          <!-- CHART 1: GAP Score Bar Chart -->
+          <div class="hairline-card rounded-xl p-5 sm:p-6 bg-white flex flex-col">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="text-xs font-mono uppercase tracking-wider text-neutral-500">Capability Assessment</span>
+                <h3 class="text-lg font-semibold text-neutral-900 tracking-tight">GAP AGI Score Comparison</h3>
+                <p class="text-xs text-neutral-500 mt-0.5">Primary composite metric testing generalization and complex reasoning.</p>
+              </div>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-neutral-100 text-neutral-700">Higher = Better</span>
+            </div>
+            <div class="relative w-full h-72 flex-grow flex items-center justify-center">
+              <canvas id="scoreChart"></canvas>
+            </div>
+          </div>
+
+          <!-- CHART 2: Pareto Frontier Scatter (Cost vs Performance) -->
+          <div class="hairline-card rounded-xl p-5 sm:p-6 bg-white flex flex-col">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="text-xs font-mono uppercase tracking-wider text-neutral-500">Pareto Frontier</span>
+                <h3 class="text-lg font-semibold text-neutral-900 tracking-tight">Performance vs. Compute Cost</h3>
+                <p class="text-xs text-neutral-500 mt-0.5">GAP Score (Y-axis) plotted against CPTask ($) (X-axis). Top-left is optimal.</p>
+              </div>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-neutral-100 text-neutral-700">Cost-Perf Tradeoff</span>
+            </div>
+            <div class="relative w-full h-72 flex-grow flex items-center justify-center">
+              <canvas id="scatterChart"></canvas>
+            </div>
+          </div>
+
+          <!-- CHART 3: Cost Efficiency Ratio (Score / CPTask) -->
+          <div class="hairline-card rounded-xl p-5 sm:p-6 bg-white flex flex-col">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="text-xs font-mono uppercase tracking-wider text-neutral-500">Economic Value</span>
+                <h3 class="text-lg font-semibold text-neutral-900 tracking-tight">Intelligence Yield per Dollar</h3>
+                <p class="text-xs text-neutral-500 mt-0.5">Calculated as GAP Score / CPTask. Highlights models that deliver more intelligence per compute spend.</p>
+              </div>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-neutral-100 text-neutral-700">Score / Cost</span>
+            </div>
+            <div class="relative w-full h-72 flex-grow flex items-center justify-center">
+              <canvas id="efficiencyChart"></canvas>
+            </div>
+          </div>
+
+          <!-- CHART 4: Task Throughput (TPTask) -->
+          <div class="hairline-card rounded-xl p-5 sm:p-6 bg-white flex flex-col">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="text-xs font-mono uppercase tracking-wider text-neutral-500">Throughput & Execution</span>
+                <h3 class="text-lg font-semibold text-neutral-900 tracking-tight">Task Throughput (TPTask)</h3>
+                <p class="text-xs text-neutral-500 mt-0.5">Execution speed and token processing throughput across complex benchmark tasks.</p>
+              </div>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-neutral-100 text-neutral-700">TPTask Units</span>
+            </div>
+            <div class="relative w-full h-72 flex-grow flex items-center justify-center">
+              <canvas id="throughputChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE HEAD-TO-HEAD MODEL COMPARISON TOOL -->
+    <section id="compare" class="py-14 bg-[#f8f9fa] border-b border-neutral-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="mb-8">
+          <div class="text-xs font-mono uppercase tracking-wider text-neutral-500 mb-1">
+            DECISION ENGINE & TRADE-OFF TOOL
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-semibold text-neutral-950 tracking-display">
+            Head-to-Head Model Comparison
+          </h2>
+          <p class="text-sm text-neutral-600 mt-1 max-w-2xl">
+            Directly contrast any two verified frontier models across score differential, cost delta, and execution profile.
+          </p>
+        </div>
+
+        <div class="hairline-card rounded-xl p-6 bg-white">
+          
+          <!-- Selectors -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="compareModelA" class="block text-xs font-mono uppercase text-neutral-500 mb-2">Model A (Baseline)</label>
+              <select id="compareModelA" class="w-full text-sm font-medium bg-neutral-50 border border-neutral-200 rounded-lg p-2.5 text-neutral-900 focus:outline-none focus:border-blue-500">
+                <!-- Options populated dynamically -->
+              </select>
+            </div>
+
+            <div>
+              <label for="compareModelB" class="block text-xs font-mono uppercase text-neutral-500 mb-2">Model B (Challenger)</label>
+              <select id="compareModelB" class="w-full text-sm font-medium bg-neutral-50 border border-neutral-200 rounded-lg p-2.5 text-neutral-900 focus:outline-none focus:border-blue-500">
+                <!-- Options populated dynamically -->
+              </select>
+            </div>
+          </div>
+
+          <!-- Comparison Results Table / Delta Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="compareResultsGrid">
+            
+            <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
+              <div class="text-xs font-mono text-neutral-500 uppercase">GAP Score Delta</div>
+              <div id="cmpScoreDelta" class="text-2xl font-semibold text-neutral-900 mt-1">—</div>
+              <div id="cmpScoreSub" class="text-xs text-neutral-500 mt-0.5">Select models above</div>
+            </div>
+
+            <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
+              <div class="text-xs font-mono text-neutral-500 uppercase">Compute Cost (CPTask) Delta</div>
+              <div id="cmpCostDelta" class="text-2xl font-semibold text-neutral-900 mt-1">—</div>
+              <div id="cmpCostSub" class="text-xs text-neutral-500 mt-0.5">Select models above</div>
+            </div>
+
+            <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
+              <div class="text-xs font-mono text-neutral-500 uppercase">Throughput (TPTask) Delta</div>
+              <div id="cmpTpDelta" class="text-2xl font-semibold text-neutral-900 mt-1">—</div>
+              <div id="cmpTpSub" class="text-xs text-neutral-500 mt-0.5">Select models above</div>
+            </div>
+
+          </div>
+
+          <!-- Analytical Takeaway -->
+          <div id="cmpAnalysisText" class="mt-4 p-4 rounded-lg bg-blue-50/60 border border-blue-100 text-xs sm:text-sm text-blue-900 font-sans leading-relaxed">
+            Select two models above to view the automated frontier analysis.
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: METHODOLOGY & WHY GAP EXISTS (Editorial, Scientific, High SEO Authority) -->
+    <section id="methodology" class="py-16 bg-white border-b border-neutral-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Left Column: Narrative & Mission -->
+          <div class="lg:col-span-5">
+            <div class="sticky top-20">
+              <div class="text-xs font-mono uppercase tracking-wider text-neutral-500 mb-2">
+                THE GENERAL AGI PROBLEM
+              </div>
+              <h2 class="text-3xl font-semibold text-neutral-950 tracking-display leading-tight mb-4">
+                Why existing benchmarks failed to measure real AGI.
+              </h2>
+              <p class="text-neutral-600 text-base leading-relaxed mb-4">
+                Traditional LLM evaluations (MMLU, GSM8K, HumanEval) suffered from massive training-set contamination, test-set memorization, and narrow task alignment. When a model scores 95% on MMLU, it often memorized academic test banks rather than acquiring generalized problem-solving skills.
+              </p>
+              <p class="text-neutral-600 text-base leading-relaxed mb-6">
+                <strong class="text-neutral-900 font-medium">GAP</strong> was designed to test true out-of-distribution reasoning, autonomous multi-step agency, and cost-sustainable inference.
+              </p>
+
+              <!-- Official Links Card -->
+              <div class="p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-xs space-y-2.5 font-mono">
+                <div class="font-semibold text-neutral-900 uppercase">Official Project Channels</div>
+                <div class="flex items-center justify-between">
+                  <span class="text-neutral-500">GitHub:</span>
+                  <a href="https://github.com/GAP-benchmark" target="_blank" class="text-blue-600 hover:underline">github.com/GAP-benchmark</a>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-neutral-500">Hugging Face:</span>
+                  <a href="https://huggingface.co/GAP-benchmark" target="_blank" class="text-blue-600 hover:underline">hf.co/GAP-benchmark</a>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-neutral-500">X (Twitter):</span>
+                  <a href="https://x.com/GAP_benchmark" target="_blank" class="text-blue-600 hover:underline">@GAP_benchmark</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: 4 Core Evaluation Pillars -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <!-- Pillar 1 -->
+            <article class="p-6 rounded-xl border border-neutral-200 bg-neutral-50/50">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="w-8 h-8 rounded-lg bg-neutral-900 text-white flex items-center justify-center font-mono text-xs font-semibold">01</span>
+                <h3 class="text-lg font-semibold text-neutral-950 tracking-tight">Novel Out-of-Distribution Generalization</h3>
+              </div>
+              <p class="text-sm text-neutral-600 leading-relaxed">
+                Tasks generated with dynamic procedural parameters that cannot be scraped or memorized from internet pre-training corpora. The model must synthesize novel logical solutions on the fly, testing pure cognitive adaptability.
+              </p>
+            </article>
+
+            <!-- Pillar 2 -->
+            <article class="p-6 rounded-xl border border-neutral-200 bg-neutral-50/50">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="w-8 h-8 rounded-lg bg-neutral-900 text-white flex items-center justify-center font-mono text-xs font-semibold">02</span>
+                <h3 class="text-lg font-semibold text-neutral-950 tracking-tight">Autonomous Multi-Step Execution (TPTask)</h3>
+              </div>
+              <p class="text-sm text-neutral-600 leading-relaxed">
+                Rather than single-turn question answering, GAP measures how models maintain coherent planning state over extended chains of thought, tool calls, and error recovery iterations (<span class="font-mono text-xs bg-neutral-200 px-1 py-0.5 rounded">TPTask</span>).
+              </p>
+            </article>
+
+            <!-- Pillar 3 -->
+            <article class="p-6 rounded-xl border border-neutral-200 bg-neutral-50/50">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="w-8 h-8 rounded-lg bg-neutral-900 text-white flex items-center justify-center font-mono text-xs font-semibold">03</span>
+                <h3 class="text-lg font-semibold text-neutral-950 tracking-tight">Economic Compute Reality (CPTask)</h3>
+              </div>
+              <p class="text-sm text-neutral-600 leading-relaxed">
+                An AI system that achieves 90% accuracy but costs $50 per single reasoning step is economically impractical. GAP quantifies the exact monetary and compute cost per completed task (<span class="font-mono text-xs bg-neutral-200 px-1 py-0.5 rounded">CPTask</span>) to expose true commercial viability.
+              </p>
+            </article>
+
+            <!-- Pillar 4 -->
+            <article class="p-6 rounded-xl border border-neutral-200 bg-neutral-50/50">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="w-8 h-8 rounded-lg bg-neutral-900 text-white flex items-center justify-center font-mono text-xs font-semibold">04</span>
+                <h3 class="text-lg font-semibold text-neutral-950 tracking-tight">Zero-Bias Open Verification</h3>
+              </div>
+              <p class="text-sm text-neutral-600 leading-relaxed">
+                All evaluation scripts, input seeds, and scoring rubrics are completely transparent. GAP does not accept vendor sponsorships or proprietary compute credits, preserving uncompromising scientific impartiality.
+              </p>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: FREQUENTLY ASKED QUESTIONS (SEO Rich Snippets) -->
+    <section id="faq" class="py-16 bg-[#f8f9fa] border-b border-neutral-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-12">
+          <div class="text-xs font-mono uppercase tracking-wider text-neutral-500 mb-1">
+            FREQUENTLY ASKED QUESTIONS
+          </div>
+          <h2 class="text-3xl font-semibold text-neutral-950 tracking-display">
+            Understanding the Benchmark
+          </h2>
+          <p class="text-sm text-neutral-600 mt-2">
+            Answers to common questions about evaluation methodology, metric calculations, and data freshness.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          
+          <details class="hairline-card rounded-xl p-5 bg-white group" open>
+            <summary class="flex items-center justify-between font-semibold text-neutral-900 cursor-pointer list-none text-base">
+              <span>What is GAP and what does it stand for?</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform"></i>
+            </summary>
+            <p class="mt-3 text-sm text-neutral-600 leading-relaxed border-t border-neutral-100 pt-3">
+              GAP stands for <strong>General AGI Problem</strong>. As AI laboratories frequently announce new models claiming to have achieved or approached Artificial General Intelligence (AGI), GAP provides an empirical, independent testbed to evaluate these assertions against strict criteria of cognitive versatility, zero-shot adaptation, and multi-step reasoning.
+            </p>
+          </details>
+
+          <details class="hairline-card rounded-xl p-5 bg-white group">
+            <summary class="flex items-center justify-between font-semibold text-neutral-900 cursor-pointer list-none text-base">
+              <span>What do the TPTask and CPTask metrics represent?</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform"></i>
+            </summary>
+            <div class="mt-3 text-sm text-neutral-600 leading-relaxed border-t border-neutral-100 pt-3 space-y-2">
+              <p>
+                <strong>TPTask (Throughput per Task / Time per Task):</strong> Measures the execution speed and inference latency required by a model to synthesize a complete solution across evaluation scenarios.
+              </p>
+              <p>
+                <strong>CPTask (Cost per Task / Compute Index):</strong> Measures the inference cost in US Dollars (or compute normalized index) expended to execute each standardized evaluation task.
+              </p>
+            </div>
+          </details>
+
+          <details class="hairline-card rounded-xl p-5 bg-white group">
+            <summary class="flex items-center justify-between font-semibold text-neutral-900 cursor-pointer list-none text-base">
+              <span>Why does the leaderboard only display the top 10 models?</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform"></i>
+            </summary>
+            <p class="mt-3 text-sm text-neutral-600 leading-relaxed border-t border-neutral-100 pt-3">
+              To maintain extreme signal-to-noise ratio and prevent leaderboard bloat, GAP enforces a strict policy of displaying only the top 10 ranked frontier models based on composite GAP Score. Every single entry represents a verified model tested against the exact same test harness.
+            </p>
+          </details>
+
+          <details class="hairline-card rounded-xl p-5 bg-white group">
+            <summary class="flex items-center justify-between font-semibold text-neutral-900 cursor-pointer list-none text-base">
+              <span>How does GAP handle missing values or incomplete model metadata?</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform"></i>
+            </summary>
+            <p class="mt-3 text-sm text-neutral-600 leading-relaxed border-t border-neutral-100 pt-3">
+              The benchmark data ingestion engine is built to be resilient: if an evaluation run has no recorded author, missing TPTask, or missing CPTask, the system gracefully handles the null fields without crashing or distorting comparative charts, ensuring scientific reliability.
+            </p>
+          </details>
+
+          <details class="hairline-card rounded-xl p-5 bg-white group">
+            <summary class="flex items-center justify-between font-semibold text-neutral-900 cursor-pointer list-none text-base">
+              <span>Where can researchers download the raw evaluation data?</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform"></i>
+            </summary>
+            <p class="mt-3 text-sm text-neutral-600 leading-relaxed border-t border-neutral-100 pt-3">
+              The raw evaluation dataset is continuously updated and publicly accessible in plain CSV format at <a href="https://leaderboard-5kj.pages.dev/data.csv" target="_blank" class="text-blue-600 hover:underline font-mono">https://leaderboard-5kj.pages.dev/data.csv</a> and mirrored on our official Hugging Face organization at <a href="https://huggingface.co/GAP-benchmark" target="_blank" class="text-blue-600 hover:underline font-mono">huggingface.co/GAP-benchmark</a>.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER (Apple relaxed leading + Vercel clean hairlines) -->
+  <footer class="bg-neutral-50 border-t border-neutral-200 text-neutral-600 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+        
+        <!-- Col 1: Project Identity -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <div class="w-6 h-6 rounded bg-neutral-950 text-white flex items-center justify-center font-mono font-bold text-xs">GAP</div>
+            <span class="font-semibold text-neutral-900">GAP Benchmark</span>
+          </div>
+          <p class="text-neutral-500 text-xs leading-relaxed">
+            General AGI Problem. Independent scientific evaluation of frontier artificial general intelligence claims.
+          </p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <div class="font-mono uppercase text-neutral-400 text-[11px] mb-3 font-semibold">Evaluation</div>
+          <ul class="space-y-2">
+            <li><a href="#leaderboard" class="hover:text-neutral-900 transition-colors">Top 10 Leaderboard</a></li>
+            <li><a href="#charts" class="hover:text-neutral-900 transition-colors">Frontier Charts</a></li>
+            <li><a href="#compare" class="hover:text-neutral-900 transition-colors">Head-to-Head Compare</a></li>
+            <li><a href="#methodology" class="hover:text-neutral-900 transition-colors">Testing Methodology</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Repositories & Community -->
+        <div>
+          <div class="font-mono uppercase text-neutral-400 text-[11px] mb-3 font-semibold">Open Source</div>
+          <ul class="space-y-2">
+            <li><a href="https://github.com/GAP-benchmark" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-900 transition-colors flex items-center gap-1.5"><i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo</a></li>
+            <li><a href="https://huggingface.co/GAP-benchmark" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-900 transition-colors flex items-center gap-1.5"><span class="font-mono font-bold text-[10px] bg-amber-100 text-amber-900 px-1 rounded">HF</span> Hugging Face</a></li>
+            <li><a href="https://x.com/GAP_benchmark" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-900 transition-colors flex items-center gap-1.5"><i data-lucide="twitter" class="w-3.5 h-3.5"></i> X (Twitter)</a></li>
+            <li><a href="https://leaderboard-5kj.pages.dev/data.csv" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-900 transition-colors flex items-center gap-1.5"><i data-lucide="file-text" class="w-3.5 h-3.5"></i> Raw data.csv</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Citation & Integrity -->
+        <div>
+          <div class="font-mono uppercase text-neutral-400 text-[11px] mb-3 font-semibold">Citation & Integrity</div>
+          <p class="text-neutral-500 text-xs leading-relaxed mb-2">
+            GAP Benchmark data is open under CC-BY 4.0. Please cite GAP Benchmark in scientific publications.
+          </p>
+          <div class="font-mono text-[10px] text-neutral-400">
+            build: 2026.11 · verified live
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Legal Strip -->
+      <div class="pt-8 border-t border-neutral-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-neutral-400 text-[11px] font-mono">
+        <div>
+          © 2026 GAP Benchmark (General AGI Problem). All rights reserved. Zero sponsored data.
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:underline">Privacy Policy</a>
+          <a href="#" class="hover:underline">Terms of Evaluation</a>
+          <a href="https://leaderboard-5kj.pages.dev/data.csv" class="hover:underline">data.csv</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT: BULLETPROOF LIVE PARSING, CHARTS, AND LOGIC -->
+  <script>
+    // Live endpoint specified by user
+    const CSV_URL = 'https://leaderboard-5kj.pages.dev/data.csv';
+
+    // State management
+    let rawModels = [];
+    let displayedModels = [];
+    let currentFilter = 'all';
+    let currentSort = 'score_desc';
+
+    // Chart instances
+    let scoreChartInstance = null;
+    let scatterChartInstance = null;
+    let efficiencyChartInstance = null;
+    let throughputChartInstance = null;
+
+    // Helper: Escape HTML to prevent XSS
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // Helper: Capitalize
+    function capitalize(str) {
+      if (!str) return '—';
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    // ROBUST CSV PARSER: Handles quotes, commas, empty lines, missing headers
+    function parseCSV(csvText) {
+      if (!csvText || !csvText.trim()) return [];
+      
+      const lines = csvText.split(/\r?\n/).filter(line => line.trim().length > 0);
+      if (lines.length < 2) return [];
+
+      // Parse header
+      const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+      const authorIdx = headers.findIndex(h => h === 'author');
+      const modelIdx = headers.findIndex(h => h.includes('model'));
+      const scoreIdx = headers.findIndex(h => h === 'score');
+      const tpIdx = headers.findIndex(h => h.includes('tptask') || h === 'tp');
+      const cpIdx = headers.findIndex(h => h.includes('cptask') || h === 'cp');
+      const openIdx = headers.findIndex(h => h.includes('opensource') || h.includes('open'));
+
+      const results = [];
+
+      for (let i = 1; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (!line) continue;
+
+        // Parse CSV line taking simple commas into account
+        const values = line.split(',').map(v => v.trim());
+
+        // Extract with graceful fallback as explicitly requested:
+        // "no error if one model has no author as well as TPTask and CPTask and few other except score"
+        const rawAuthor = authorIdx !== -1 && values[authorIdx] ? values[authorIdx] : '';
+        const rawModel = modelIdx !== -1 && values[modelIdx] ? values[modelIdx] : `Model-${i}`;
+        const rawScore = scoreIdx !== -1 && values[scoreIdx] ? parseFloat(values[scoreIdx]) : 0;
+        
+        const rawTP = tpIdx !== -1 && values[tpIdx] !== '' && !isNaN(parseFloat(values[tpIdx])) 
+                      ? parseFloat(values[tpIdx]) : null;
+                      
+        const rawCP = cpIdx !== -1 && values[cpIdx] !== '' && !isNaN(parseFloat(values[cpIdx])) 
+                      ? parseFloat(values[cpIdx]) : null;
+
+        const rawOpen = openIdx !== -1 && values[openIdx] 
+                        ? values[openIdx].toLowerCase() === 'true' 
+                        : false;
+
+        const score = isNaN(rawScore) ? 0 : rawScore;
+        const author = rawAuthor || 'Independent';
+
+        // Calculate Cost Efficiency (Score / CPTask) if CPTask is valid and > 0
+        const efficiency = (rawCP !== null && rawCP > 0) ? (score / rawCP) : null;
+
+        results.push({
+          id: `model-${i}`,
+          author: author,
+          modelName: rawModel,
+          score: score,
+          tpTask: rawTP,
+          cpTask: rawCP,
+          isOpenSource: rawOpen,
+          efficiency: efficiency
+        });
+      }
+
+      // STRICT USER RULE: Sort by Score descending and take Top 10 models maximum
+      // "only show top 10 models no more than that"
+      results.sort((a, b) => b.score - a.score);
+      const top10 = results.slice(0, 10);
+
+      // Assign official rank
+      top10.forEach((m, idx) => {
+        m.rank = idx + 1;
+      });
+
+      return top10;
+    }
+
+    // FETCH LIVE CSV FROM LINK WITH CACHE-BUSTING
+    async function fetchBenchmarkData() {
+      const refreshIcon = document.getElementById('refreshIcon');
+      const statusText = document.getElementById('liveStatusText');
+      const timestampEl = document.getElementById('dataTimestamp');
+
+      if (refreshIcon) refreshIcon.classList.add('animate-spin');
+      if (statusText) statusText.textContent = 'Syncing...';
+
+      try {
+        // ALWAYS fetch directly from the live URL each and every time
+        // Cache bust query ensures the browser fetches fresh data from Cloudflare
+        const cacheBuster = `?_t=${Date.now()}`;
+        const response = await fetch(CSV_URL + cacheBuster, {
+          cache: 'no-store',
+          headers: {
+            'Accept': 'text/csv, text/plain, */*'
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error ${response.status}`);
+        }
+
+        const csvData = await response.text();
+        rawModels = parseCSV(csvData);
+
+        if (statusText) statusText.textContent = 'Live Data';
+        if (timestampEl) {
+          const now = new Date();
+          timestampEl.textContent = `Updated ${now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`;
+        }
+
+      } catch (err) {
+        console.warn('Network fetch error, attempting fallback fetch:', err);
+        if (statusText) statusText.textContent = 'Retry Mode';
+        
+        // Fallback to local data.csv if browser blocks cross-origin in certain sandboxes
+        try {
+          const fallbackRes = await fetch('data.csv');
+          const fallbackText = await fallbackRes.text();
+          rawModels = parseCSV(fallbackText);
+          if (timestampEl) timestampEl.textContent = 'Local Sync';
+        } catch (fallbackErr) {
+          console.error('All fetch attempts failed:', fallbackErr);
+        }
+      } finally {
+        if (refreshIcon) {
+          setTimeout(() => refreshIcon.classList.remove('animate-spin'), 400);
+        }
+        applyFiltersAndRender();
+        populateCompareSelectors();
+      }
+    }
+
+    // APPLY FILTERS & SORT
+    function applyFiltersAndRender() {
+      const searchVal = (document.getElementById('searchInput')?.value || '').toLowerCase().trim();
+
+      // Filter by license
+      let filtered = rawModels.filter(m => {
+        if (currentFilter === 'opensource') return m.isOpenSource === true;
+        if (currentFilter === 'proprietary') return m.isOpenSource === false;
+        return true;
+      });
+
+      // Filter by search term (model name or author)
+      if (searchVal) {
+        filtered = filtered.filter(m => 
+          m.modelName.toLowerCase().includes(searchVal) || 
+          m.author.toLowerCase().includes(searchVal)
+        );
+      }
+
+      // Sort
+      filtered.sort((a, b) => {
+        switch (currentSort) {
+          case 'score_desc': return b.score - a.score;
+          case 'score_asc': return a.score - b.score;
+          case 'cost_asc': 
+            return (a.cpTask === null ? 999999 : a.cpTask) - (b.cpTask === null ? 999999 : b.cpTask);
+          case 'cost_desc': 
+            return (b.cpTask === null ? -1 : b.cpTask) - (a.cpTask === null ? -1 : a.cpTask);
+          case 'tp_desc': 
+            return (b.tpTask === null ? -1 : b.tpTask) - (a.tpTask === null ? -1 : a.tpTask);
+          case 'eff_desc': 
+            return (b.efficiency === null ? -1 : b.efficiency) - (a.efficiency === null ? -1 : a.efficiency);
+          default: return b.score - a.score;
+        }
+      });
+
+      // Strict limit: Top 10 models max
+      displayedModels = filtered.slice(0, 10);
+
+      renderStats();
+      renderTable();
+      renderAllCharts();
+    }
+
+    // RENDER TOP STATS CARDS
+    function renderStats() {
+      if (!rawModels || rawModels.length === 0) return;
+
+      const topModel = rawModels[0];
+      const statTopModel = document.getElementById('statTopModel');
+      const statTopScore = document.getElementById('statTopScore');
+      if (statTopModel && topModel) {
+        statTopModel.textContent = capitalize(topModel.modelName);
+        statTopScore.textContent = `Score: ${topModel.score.toFixed(2)} · ${capitalize(topModel.author)}`;
+      }
+
+      // Best Efficiency
+      const validEff = rawModels.filter(m => m.efficiency !== null).sort((a, b) => b.efficiency - a.efficiency);
+      const statBestEfficiency = document.getElementById('statBestEfficiency');
+      const statBestEffValue = document.getElementById('statBestEffValue');
+      if (statBestEfficiency && validEff.length > 0) {
+        statBestEfficiency.textContent = capitalize(validEff[0].modelName);
+        statBestEffValue.textContent = `${validEff[0].efficiency.toFixed(3)} Score/$`;
+      } else if (statBestEfficiency) {
+        statBestEfficiency.textContent = '—';
+        statBestEffValue.textContent = 'N/A';
+      }
+
+      // Lowest Cost
+      const validCost = rawModels.filter(m => m.cpTask !== null).sort((a, b) => a.cpTask - b.cpTask);
+      const statLowestCost = document.getElementById('statLowestCost');
+      const statLowestCostVal = document.getElementById('statLowestCostVal');
+      if (statLowestCost && validCost.length > 0) {
+        statLowestCost.textContent = capitalize(validCost[0].modelName);
+        statLowestCostVal.textContent = `$${validCost[0].cpTask} / task`;
+      } else if (statLowestCost) {
+        statLowestCost.textContent = '—';
+        statLowestCostVal.textContent = 'N/A';
+      }
+
+      // Total Models Count (strictly max 10)
+      const statModelCount = document.getElementById('statModelCount');
+      if (statModelCount) {
+        statModelCount.textContent = `${rawModels.length} Models`;
+      }
+    }
+
+    // RENDER LEADERBOARD TABLE
+    function renderTable() {
+      const tbody = document.getElementById('leaderboardBody');
+      if (!tbody) return;
+
+      if (displayedModels.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="8" class="py-8 text-center text-neutral-500 font-mono text-xs">
+              No models match your search criteria.
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      let html = '';
+      displayedModels.forEach((m) => {
+        const rankDisplay = m.rank === 1 ? `<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-100 text-amber-900 font-bold text-xs">1</span>` :
+                            m.rank === 2 ? `<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-neutral-200 text-neutral-800 font-semibold text-xs">2</span>` :
+                            m.rank === 3 ? `<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-50 text-amber-800 font-medium text-xs">3</span>` :
+                            `<span class="text-neutral-500 font-mono text-xs">${m.rank}</span>`;
+
+        const scoreBarWidth = Math.min(100, (m.score / 3.0) * 100);
+
+        const costDisplay = m.cpTask !== null ? `$${m.cpTask.toFixed(1)}` : `<span class="text-neutral-400">—</span>`;
+        const tpDisplay = m.tpTask !== null ? m.tpTask.toLocaleString() : `<span class="text-neutral-400">—</span>`;
+        const effDisplay = m.efficiency !== null ? m.efficiency.toFixed(3) : `<span class="text-neutral-400">—</span>`;
+
+        const licenseBadge = m.isOpenSource
+          ? `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+               <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Open
+             </span>`
+          : `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-neutral-100 text-neutral-700 border border-neutral-200">
+               <span class="w-1.5 h-1.5 rounded-full bg-neutral-400"></span> Closed API
+             </span>`;
+
+        html += `
+          <tr class="table-row-hover transition-colors">
+            <td class="py-3.5 px-4 text-center font-mono">${rankDisplay}</td>
+            <td class="py-3.5 px-4 font-semibold text-neutral-950 font-sans">
+              <div class="flex items-center gap-2">
+                <span>${escapeHtml(capitalize(m.modelName))}</span>
+              </div>
+            </td>
+            <td class="py-3.5 px-4 text-neutral-600 font-mono text-xs">
+              <span class="px-2 py-1 rounded bg-neutral-100/80 border border-neutral-200/50">${escapeHtml(capitalize(m.author))}</span>
+            </td>
+            <td class="py-3.5 px-4 text-right">
+              <div class="inline-flex flex-col items-end">
+                <span class="font-mono font-bold text-neutral-950 text-sm">${m.score.toFixed(2)}</span>
+                <div class="w-16 h-1 bg-neutral-100 rounded-full mt-1 overflow-hidden">
+                  <div class="h-full bg-blue-600 rounded-full" style="width: ${scoreBarWidth}%"></div>
+                </div>
+              </div>
+            </td>
+            <td class="py-3.5 px-4 text-right font-mono text-xs text-neutral-700">${costDisplay}</td>
+            <td class="py-3.5 px-4 text-right font-mono text-xs text-neutral-700">${tpDisplay}</td>
+            <td class="py-3.5 px-4 text-right font-mono text-xs font-semibold text-neutral-900">${effDisplay}</td>
+            <td class="py-3.5 px-4 text-center">${licenseBadge}</td>
+          </tr>
+        `;
+      });
+
+      tbody.innerHTML = html;
+      lucide.createIcons();
+    }
+
+    // RENDER ALL 4 CHART.JS CHARTS WITH CLEAN APPLE/VERCEL STYLING
+    function renderAllCharts() {
+      if (!rawModels || rawModels.length === 0) return;
+
+      // Base typography & styling tokens for charts
+      Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
+      Chart.defaults.font.size = 11;
+      Chart.defaults.color = '#6b7280';
+
+      const labels = displayedModels.map(m => capitalize(m.modelName));
+      const scores = displayedModels.map(m => m.score);
+      const authors = displayedModels.map(m => capitalize(m.author));
+
+      // 1. GAP SCORE BAR CHART
+      const ctxScore = document.getElementById('scoreChart');
+      if (ctxScore) {
+        if (scoreChartInstance) scoreChartInstance.destroy();
+        scoreChartInstance = new Chart(ctxScore, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'GAP Score',
+              data: scores,
+              backgroundColor: '#0066cc',
+              borderRadius: 6,
+              barThickness: 28
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: '#111827',
+                titleFont: { size: 12, weight: '600' },
+                bodyFont: { size: 12 },
+                padding: 10,
+                cornerRadius: 8,
+                callbacks: {
+                  afterLabel: (ctx) => `Lab: ${authors[ctx.dataIndex]}`
+                }
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                grid: { color: '#f3f4f6' },
+                ticks: { font: { family: 'monospace' } }
+              },
+              x: {
+                grid: { display: false },
+                ticks: { maxRotation: 0, font: { weight: '500' } }
+              }
+            }
+          }
+        });
+      }
+
+      // 2. PARETO SCATTER PLOT (Score vs Cost)
+      const ctxScatter = document.getElementById('scatterChart');
+      if (ctxScatter) {
+        if (scatterChartInstance) scatterChartInstance.destroy();
+
+        const scatterData = displayedModels
+          .filter(m => m.cpTask !== null)
+          .map(m => ({
+            x: m.cpTask,
+            y: m.score,
+            model: capitalize(m.modelName),
+            author: capitalize(m.author)
+          }));
+
+        scatterChartInstance = new Chart(ctxScatter, {
+          type: 'scatter',
+          data: {
+            datasets: [{
+              label: 'Models',
+              data: scatterData,
+              backgroundColor: '#43003b',
+              borderColor: '#8842fd',
+              borderWidth: 2,
+              pointRadius: 8,
+              pointHoverRadius: 11
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: '#111827',
+                titleFont: { size: 12, weight: '600' },
+                bodyFont: { size: 12 },
+                padding: 10,
+                cornerRadius: 8,
+                callbacks: {
+                  title: (items) => items[0].raw.model,
+                  label: (item) => `GAP Score: ${item.raw.y.toFixed(2)} | Cost: $${item.raw.x}`
+                }
+              }
+            },
+            scales: {
+              x: {
+                title: { display: true, text: 'Compute Cost per Task ($) (Lower is Better)', font: { size: 11 } },
+                grid: { color: '#f3f4f6' },
+                ticks: { font: { family: 'monospace' } }
+              },
+              y: {
+                title: { display: true, text: 'GAP AGI Score (Higher is Better)', font: { size: 11 } },
+                grid: { color: '#f3f4f6' },
+                ticks: { font: { family: 'monospace' } }
+              }
+            }
+          }
+        });
+      }
+
+      // 3. COST EFFICIENCY BAR CHART (Score / Cost)
+      const ctxEff = document.getElementById('efficiencyChart');
+      if (ctxEff) {
+        if (efficiencyChartInstance) efficiencyChartInstance.destroy();
+
+        const effData = displayedModels.map(m => m.efficiency !== null ? m.efficiency : 0);
+
+        efficiencyChartInstance = new Chart(ctxEff, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Score per $',
+              data: effData,
+              backgroundColor: '#059669',
+              borderRadius: 6,
+              barThickness: 28
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: '#111827',
+                titleFont: { size: 12, weight: '600' },
+                bodyFont: { size: 12 },
+                padding: 10,
+                cornerRadius: 8,
+                callbacks: {
+                  label: (ctx) => `Efficiency Yield: ${ctx.parsed.y.toFixed(3)} Score/$`
+                }
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                grid: { color: '#f3f4f6' },
+                ticks: { font: { family: 'monospace' } }
+              },
+              x: {
+                grid: { display: false }
+              }
+            }
+          }
+        });
+      }
+
+      // 4. TPTask THROUGHPUT CHART
+      const ctxTP = document.getElementById('throughputChart');
+      if (ctxTP) {
+        if (throughputChartInstance) throughputChartInstance.destroy();
+
+        const tpData = displayedModels.map(m => m.tpTask !== null ? m.tpTask : 0);
+
+        throughputChartInstance = new Chart(ctxTP, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'TPTask',
+              data: tpData,
+              backgroundColor: '#d97706',
+              borderRadius: 6,
+              barThickness: 28
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: '#111827',
+                titleFont: { size: 12, weight: '600' },
+                bodyFont: { size: 12 },
+                padding: 10,
+                cornerRadius: 8,
+                callbacks: {
+                  label: (ctx) => `TPTask: ${ctx.parsed.y.toLocaleString()}`
+                }
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                grid: { color: '#f3f4f6' },
+                ticks: { font: { family: 'monospace' } }
+              },
+              x: {
+                grid: { display: false }
+              }
+            }
+          }
+        });
+      }
+    }
+
+    // POPULATE COMPARE SELECTORS
+    function populateCompareSelectors() {
+      const selectA = document.getElementById('compareModelA');
+      const selectB = document.getElementById('compareModelB');
+      if (!selectA || !selectB || rawModels.length === 0) return;
+
+      let optionsA = '';
+      let optionsB = '';
+
+      rawModels.forEach((m, idx) => {
+        optionsA += `<option value="${m.id}" ${idx === 0 ? 'selected' : ''}>${capitalize(m.modelName)} (${capitalize(m.author)})</option>`;
+        optionsB += `<option value="${m.id}" ${idx === 1 ? 'selected' : (rawModels.length === 1 ? 'selected' : '')}>${capitalize(m.modelName)} (${capitalize(m.author)})</option>`;
+      });
+
+      selectA.innerHTML = optionsA;
+      selectB.innerHTML = optionsB;
+
+      updateComparison();
+    }
+
+    // UPDATE HEAD-TO-HEAD COMPARISON
+    function updateComparison() {
+      const selectA = document.getElementById('compareModelA');
+      const selectB = document.getElementById('compareModelB');
+      if (!selectA || !selectB) return;
+
+      const modelA = rawModels.find(m => m.id === selectA.value) || rawModels[0];
+      const modelB = rawModels.find(m => m.id === selectB.value) || rawModels[1] || rawModels[0];
+
+      if (!modelA || !modelB) return;
+
+      // Score Delta
+      const scoreDiff = modelA.score - modelB.score;
+      const scoreDeltaEl = document.getElementById('cmpScoreDelta');
+      const scoreSubEl = document.getElementById('cmpScoreSub');
+      if (scoreDeltaEl) {
+        scoreDeltaEl.innerHTML = scoreDiff >= 0 
+          ? `<span class="text-emerald-600">+${scoreDiff.toFixed(2)}</span>` 
+          : `<span class="text-rose-600">${scoreDiff.toFixed(2)}</span>`;
+        scoreSubEl.textContent = `${capitalize(modelA.modelName)} (${modelA.score}) vs ${capitalize(modelB.modelName)} (${modelB.score})`;
+      }
+
+      // Cost Delta
+      const costDeltaEl = document.getElementById('cmpCostDelta');
+      const costSubEl = document.getElementById('cmpCostSub');
+      if (costDeltaEl) {
+        if (modelA.cpTask !== null && modelB.cpTask !== null) {
+          const costDiff = modelA.cpTask - modelB.cpTask;
+          costDeltaEl.innerHTML = costDiff < 0 
+            ? `<span class="text-emerald-600">-$${Math.abs(costDiff).toFixed(1)}</span>` 
+            : `<span class="text-neutral-900">+$${costDiff.toFixed(1)}</span>`;
+          costSubEl.textContent = `$${modelA.cpTask} vs $${modelB.cpTask} per task`;
+        } else {
+          costDeltaEl.textContent = '—';
+          costSubEl.textContent = 'Data missing on one model';
+        }
+      }
+
+      // TP Delta
+      const tpDeltaEl = document.getElementById('cmpTpDelta');
+      const tpSubEl = document.getElementById('cmpTpSub');
+      if (tpDeltaEl) {
+        if (modelA.tpTask !== null && modelB.tpTask !== null) {
+          const tpDiff = modelA.tpTask - modelB.tpTask;
+          tpDeltaEl.innerHTML = tpDiff >= 0 
+            ? `<span class="text-blue-600">+${tpDiff}</span>` 
+            : `<span class="text-neutral-700">${tpDiff}</span>`;
+          tpSubEl.textContent = `${modelA.tpTask} vs ${modelB.tpTask} throughput`;
+        } else {
+          tpDeltaEl.textContent = '—';
+          tpSubEl.textContent = 'Data missing on one model';
+        }
+      }
+
+      // Textual Analysis
+      const analysisEl = document.getElementById('cmpAnalysisText');
+      if (analysisEl) {
+        if (modelA.id === modelB.id) {
+          analysisEl.innerHTML = `<strong>Identical model selected.</strong> Choose two distinct frontier models to evaluate performance vs budget trade-offs.`;
+        } else {
+          const leader = modelA.score >= modelB.score ? modelA : modelB;
+          const cheaper = (modelA.cpTask !== null && modelB.cpTask !== null) 
+                          ? (modelA.cpTask <= modelB.cpTask ? modelA : modelB) 
+                          : null;
+
+          let takeaway = `<strong>Synthesis:</strong> ${capitalize(leader.modelName)} leads with a GAP Score of ${leader.score.toFixed(2)}. `;
+          if (cheaper) {
+            takeaway += `${capitalize(cheaper.modelName)} offers lower compute cost at $${cheaper.cpTask} per task. `;
+          }
+          if (leader === cheaper) {
+            takeaway += `Remarkably, ${capitalize(leader.modelName)} dominates both capability and cost efficiency.`;
+          }
+          analysisEl.innerHTML = takeaway;
+        }
+      }
+    }
+
+    // COPY JSON BUTTON
+    function setupCopyJson() {
+      const copyBtn = document.getElementById('copyJsonBtn');
+      if (!copyBtn) return;
+
+      copyBtn.addEventListener('click', async () => {
+        try {
+          const jsonStr = JSON.stringify(rawModels, null, 2);
+          await navigator.clipboard.writeText(jsonStr);
+          copyBtn.innerHTML = `<i data-lucide="check" class="w-3 h-3 text-emerald-600"></i> Copied!`;
+          lucide.createIcons();
+          setTimeout(() => {
+            copyBtn.innerHTML = `<i data-lucide="copy" class="w-3 h-3"></i> Copy Data JSON`;
+            lucide.createIcons();
+          }, 2000);
+        } catch (e) {
+          alert('Could not copy to clipboard.');
+        }
+      });
+    }
+
+    // INITIALIZATION & EVENT LISTENERS
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+
+      // Mobile menu toggle
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+
+      // Refresh live button
+      const refreshBtn = document.getElementById('refreshLiveBtn');
+      if (refreshBtn) {
+        refreshBtn.addEventListener('click', () => {
+          fetchBenchmarkData();
+        });
+      }
+
+      // Search input
+      const searchInput = document.getElementById('searchInput');
+      if (searchInput) {
+        searchInput.addEventListener('input', () => {
+          applyFiltersAndRender();
+        });
+      }
+
+      // Filter pills
+      document.querySelectorAll('.filter-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-pill').forEach(b => {
+            b.classList.remove('bg-neutral-900', 'text-white');
+            b.classList.add('bg-neutral-100', 'text-neutral-700');
+          });
+          btn.classList.remove('bg-neutral-100', 'text-neutral-700');
+          btn.classList.add('bg-neutral-900', 'text-white');
+          currentFilter = btn.getAttribute('data-filter');
+          applyFiltersAndRender();
+        });
+      });
+
+      // Sort select
+      const sortSelect = document.getElementById('sortSelect');
+      if (sortSelect) {
+        sortSelect.addEventListener('change', (e) => {
+          currentSort = e.target.value;
+          applyFiltersAndRender();
+        });
+      }
+
+      // Compare model selectors
+      const selectA = document.getElementById('compareModelA');
+      const selectB = document.getElementById('compareModelB');
+      if (selectA) selectA.addEventListener('change', updateComparison);
+      if (selectB) selectB.addEventListener('change', updateComparison);
+
+      setupCopyJson();
+
+      // Fetch live data on page load
+      fetchBenchmarkData();
+    });
+  </script>
+
+</body>
+</html>
