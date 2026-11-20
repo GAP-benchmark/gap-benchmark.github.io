@@ -276,14 +276,8 @@
         </a>
       </nav>
 
-      <!-- Right Action Cluster: Clean SVGs + Real-Time Auto Sync Indicator -->
+      <!-- Right Action Cluster: Clean SVGs & Quick Actions -->
       <div class="flex items-center gap-2">
-        
-        <!-- Live Auto-Sync Status Badge -->
-        <div id="autoSyncBadge" class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono text-emerald-800 bg-emerald-50 border border-emerald-200" title="Auto-fetching latest dataset from leaderboard-5kj.pages.dev">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span id="syncStatusText">Auto-Synced</span>
-        </div>
 
         <!-- GitHub -->
         <a href="https://github.com/GAP-benchmark" target="_blank" rel="noopener noreferrer" 
@@ -311,8 +305,8 @@
           </svg>
         </a>
 
-        <!-- Live Sync Button -->
-        <button id="refreshBtn" type="button" class="btn-action ml-1 p-2 text-neutral-500 hover:text-neutral-950 hover:bg-neutral-100 rounded-md transition-colors" title="Force Sync Latest CSV" aria-label="Refresh Data">
+        <!-- Refresh Data Button -->
+        <button id="refreshBtn" type="button" class="btn-action ml-1 p-2 text-neutral-500 hover:text-neutral-950 hover:bg-neutral-100 rounded-md transition-colors" title="Refresh Data" aria-label="Refresh Data">
           <svg id="refreshSvg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
             <path d="M21 3v5h-5"></path>
@@ -419,7 +413,7 @@
               —
             </div>
             <div class="text-xs text-neutral-500 mt-1 font-mono">
-              Auto-Synced Live
+              Verified Frontier Models
             </div>
           </div>
 
@@ -649,8 +643,7 @@
           <!-- Table Bottom Bar -->
           <div class="p-4 bg-neutral-50/50 border-t border-neutral-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-500 font-mono">
             <div class="flex items-center gap-2">
-              <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span id="footerModelCount">Auto-sync active · Displaying latest verified models</span>
+              <span id="footerModelCount">Displaying latest verified models</span>
             </div>
             <div class="flex items-center gap-4">
               <a href="https://gap.sdj.com.np" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline flex items-center gap-1 font-sans font-medium">
@@ -1016,10 +1009,9 @@
       return models;
     }
 
-    // AUTO-LATEST FETCH OVER THE NETWORK EACH AND EVERY TIME
+    // FETCH DATASET SILENTLY
     async function loadData() {
       const refreshSvg = document.getElementById('refreshSvg');
-      const syncStatusText = document.getElementById('syncStatusText');
       if (refreshSvg) refreshSvg.classList.add('animate-spin');
 
       try {
@@ -1038,16 +1030,14 @@
         const text = await res.text();
         allModels = parseCSV(text);
         lastSyncTimestamp = Date.now();
-        if (syncStatusText) syncStatusText.textContent = 'Auto-Synced Live';
       } catch (err) {
-        console.warn('Live endpoint sync notice, falling back to local dataset mirror:', err);
+        console.warn('Live endpoint notice, falling back to local dataset mirror:', err);
         try {
           const localRes = await fetch('data.csv?_t=' + Date.now(), { cache: 'no-store' });
           const localText = await localRes.text();
           allModels = parseCSV(localText);
-          if (syncStatusText) syncStatusText.textContent = 'Cached Mirror';
         } catch (localErr) {
-          console.error('All data sync attempts failed:', localErr);
+          console.error('All data loading attempts failed:', localErr);
         }
       } finally {
         if (refreshSvg) {
@@ -1155,7 +1145,7 @@
           : `Top ${displayedModels.length} of ${allModels.length} Models`;
       }
       if (footerCount) {
-        footerCount.textContent = `Auto-synced live · Displaying ${displayedModels.length} of ${allModels.length} evaluated models`;
+        footerCount.textContent = `Displaying ${displayedModels.length} of ${allModels.length} evaluated models`;
       }
     }
 
