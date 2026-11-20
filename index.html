@@ -7,8 +7,8 @@
   <!-- Primary SEO Meta Tags -->
   <title>GAP Benchmark — General AGI Probe | Frontier AI Leaderboard</title>
   <meta name="title" content="GAP Benchmark — General AGI Probe | Frontier AI Leaderboard">
-  <meta name="description" content="Independent benchmark evaluating frontier AI models against Artificial General Intelligence (AGI) claims. Real-time scores, task throughput (TPTask), and compute cost (CPTask).">
-  <meta name="keywords" content="GAP benchmark, General AGI Probe, AGI benchmark, frontier AI models, LLM leaderboard, artificial general intelligence test, AI cost per task, CPTask, TPTask, OpenAI, Anthropic">
+  <meta name="description" content="Independent scientific benchmark evaluating frontier AI models against Artificial General Intelligence (AGI) claims. Pareto frontier analytics, scores, compute cost (CPTask), and throughput (TPTask).">
+  <meta name="keywords" content="GAP benchmark, General AGI Probe, AGI benchmark, Artificial Analysis, Chatbot Arena, frontier AI evaluation, LLM leaderboard, artificial general intelligence test, AI cost per task, CPTask, TPTask, OpenAI, Anthropic">
   <meta name="author" content="GAP Benchmark">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://gap.sdj.com.np/">
@@ -90,15 +90,15 @@
             "name": "What do TPTask and CPTask mean?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "TPTask represents Task Processing throughput / execution speed. CPTask represents the compute cost in dollars required to execute a standardized benchmark task."
+              "text": "TPTask represents Task Processing throughput and speed. CPTask represents the compute cost in dollars required to execute a standardized benchmark task."
             }
           },
           {
             "@type": "Question",
-            "name": "How is Cost Efficiency calculated?",
+            "name": "Where is the official platform hosted?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Cost efficiency is calculated as the model's GAP Score divided by its CPTask, showing how much intelligence capability each dollar buys."
+              "text": "The official GAP Benchmark platform and detailed historical task telemetry are hosted at https://gap.sdj.com.np."
             }
           }
         ]
@@ -110,7 +110,7 @@
   <!-- Typography: Inter font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -124,14 +124,15 @@
           },
           colors: {
             brand: {
-              blue: '#0066cc',
+              plum: '#43003b',         // Artificial Analysis plum
+              'plum-light': '#8842fd', // Violet accent
+              blue: '#0066cc',         // Apple Action Blue
               'blue-hover': '#0052a3',
               ink: '#111827',
               body: '#4b5563',
               muted: '#6b7280',
               border: '#eaeaea',
               'border-subtle': '#f3f4f6',
-              bg: '#ffffff',
               surface: '#fafafa',
             }
           }
@@ -144,7 +145,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
   <style>
-    /* Premium Modern White Aesthetics: Apple restraint + Vercel hairline precision */
     body {
       background-color: #ffffff;
       color: #111827;
@@ -167,22 +167,18 @@
       transform: scale(0.97);
     }
 
-    .clean-border {
-      border: 1px solid #eaeaea;
-    }
-
     .clean-card {
       background: #ffffff;
       border: 1px solid #eaeaea;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
       transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
     .clean-card:hover {
-      border-color: #dcdcdc;
-      box-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.05);
+      border-color: #d4d4d8;
+      box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.05);
     }
 
-    /* Clean custom scrollbar */
+    /* Subtle custom scrollbar */
     ::-webkit-scrollbar {
       width: 5px;
       height: 5px;
@@ -198,13 +194,29 @@
 </head>
 <body class="min-h-screen flex flex-col bg-white text-neutral-900 selection:bg-neutral-900 selection:text-white">
 
-  <!-- TOP NAVIGATION BAR (Ultra-clean, slim, modern white) -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-200/80">
+  <!-- TOP OFFICIAL PORTAL ANNOUNCEMENT STRIP (Clean & Official) -->
+  <aside class="bg-neutral-50 border-b border-neutral-200/80 py-2 px-4 text-xs font-mono text-neutral-600" aria-label="Official Site Announcement">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>Official Benchmark Portal: <strong class="text-neutral-900">gap.sdj.com.np</strong></span>
+        <span class="text-neutral-300 hidden md:inline">|</span>
+        <span class="text-neutral-500 hidden md:inline">Live model evaluation traces & prompt logs</span>
+      </div>
+      <a href="https://gap.sdj.com.np" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-medium text-blue-600 hover:text-blue-800 transition-colors">
+        <span>Visit Official Page (gap.sdj.com.np)</span>
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+      </a>
+    </div>
+  </aside>
+
+  <!-- TOP NAVIGATION BAR (Ultra-clean, modern white) -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-neutral-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
       
       <!-- Logo -->
       <a href="#" class="flex items-center gap-2.5 group">
-        <div class="w-7 h-7 rounded-md bg-neutral-950 text-white flex items-center justify-center font-mono font-bold text-xs tracking-wider">
+        <div class="w-7 h-7 rounded bg-[#43003b] text-white flex items-center justify-center font-mono font-bold text-xs tracking-wider shadow-sm">
           GAP
         </div>
         <div class="flex items-baseline gap-1.5">
@@ -216,14 +228,17 @@
       <!-- Navigation Links -->
       <nav class="hidden md:flex items-center gap-6 text-sm text-neutral-600 font-medium">
         <a href="#leaderboard" class="hover:text-neutral-950 transition-colors">Leaderboard</a>
-        <a href="#charts" class="hover:text-neutral-950 transition-colors">Analytics</a>
-        <a href="#compare" class="hover:text-neutral-950 transition-colors">Compare</a>
+        <a href="#charts" class="hover:text-neutral-950 transition-colors">Visual Analytics & Charts</a>
+        <a href="#compare" class="hover:text-neutral-950 transition-colors">Head-to-Head Compare</a>
         <a href="#methodology" class="hover:text-neutral-950 transition-colors">Methodology</a>
-        <a href="#faq" class="hover:text-neutral-950 transition-colors">FAQ</a>
+        <a href="https://gap.sdj.com.np" target="_blank" class="hover:text-blue-600 transition-colors flex items-center gap-1 text-blue-600 font-medium">
+          <span>Official Page</span>
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+        </a>
       </nav>
 
       <!-- Right Action Cluster: Clean SVGs -->
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-1.5">
         <!-- GitHub -->
         <a href="https://github.com/GAP-benchmark" target="_blank" rel="noopener noreferrer" 
            class="p-2 text-neutral-500 hover:text-neutral-950 hover:bg-neutral-100 rounded-md transition-colors" 
@@ -250,8 +265,8 @@
           </svg>
         </a>
 
-        <!-- Refresh Button -->
-        <button id="refreshBtn" type="button" class="btn-action ml-1 p-2 text-neutral-500 hover:text-neutral-950 hover:bg-neutral-100 rounded-md transition-colors" title="Sync live benchmark results" aria-label="Refresh">
+        <!-- Live Sync Button -->
+        <button id="refreshBtn" type="button" class="btn-action ml-1 p-2 text-neutral-500 hover:text-neutral-950 hover:bg-neutral-100 rounded-md transition-colors" title="Sync live data" aria-label="Refresh">
           <svg id="refreshSvg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
             <path d="M21 3v5h-5"></path>
@@ -264,18 +279,19 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN BODY -->
   <main class="flex-grow">
 
-    <!-- HERO SECTION (Apple Calm & Confident + Vercel Typographic Tightness) -->
-    <section class="pt-16 pb-14 md:pt-24 md:pb-20 border-b border-neutral-200 bg-white">
+    <!-- HERO SECTION (Artificial Analysis Authority + Arena Clarity) -->
+    <section class="pt-14 pb-12 md:pt-18 md:pb-16 border-b border-neutral-200 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Eyebrow -->
-        <div class="mb-4">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-neutral-100 text-neutral-800 border border-neutral-200">
-            GENERAL AGI PROBE · INDEPENDENT BENCHMARK
+        <div class="flex items-center gap-2 mb-4">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#43003b]/5 text-[#43003b] border border-[#43003b]/15">
+            GENERAL AGI PROBE · INDEPENDENT AI BENCHMARK
           </span>
+          <span class="text-xs font-mono text-neutral-400 hidden sm:inline">OBJECTIVE EVALUATION · NO PROMPT CONTAMINATION</span>
         </div>
 
         <!-- Headline -->
@@ -285,38 +301,34 @@
 
         <!-- Subtitle -->
         <p class="text-lg sm:text-xl text-neutral-600 font-normal leading-relaxed max-w-3xl mb-8">
-          Everyone now claims to have achieved AGI. <strong class="text-neutral-900 font-semibold">GAP (General AGI Probe)</strong> independently tests frontier models to measure true reasoning capabilities, compute cost per task (<span class="font-mono text-sm bg-neutral-100 px-1 py-0.5 rounded text-neutral-800">CPTask</span>), and throughput (<span class="font-mono text-sm bg-neutral-100 px-1 py-0.5 rounded text-neutral-800">TPTask</span>).
+          As AI labs claim to have achieved AGI, <strong class="text-neutral-950 font-semibold">GAP (General AGI Probe)</strong> independently evaluates frontier models on true reasoning generalization, compute cost per task (<span class="font-mono text-sm bg-neutral-100 px-1 py-0.5 rounded text-neutral-800">CPTask</span>), and execution throughput (<span class="font-mono text-sm bg-neutral-100 px-1 py-0.5 rounded text-neutral-800">TPTask</span>).
         </p>
 
         <!-- CTA Row -->
         <div class="flex flex-wrap items-center gap-3 mb-12">
-          <a href="#leaderboard" class="btn-action inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium text-white bg-[#0066cc] hover:bg-[#0052a3] transition-colors shadow-sm">
-            <span>Explore Rankings</span>
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 5v14M19 12l-7 7-7-7"/>
-            </svg>
+          <a href="#leaderboard" class="btn-action inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium text-white bg-[#43003b] hover:bg-[#32002c] transition-colors shadow-sm">
+            <span>Explore Leaderboard</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
           </a>
 
           <a href="#charts" class="btn-action inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium text-neutral-800 bg-neutral-100 hover:bg-neutral-200 border border-neutral-200 transition-colors">
-            <svg class="w-4 h-4 text-neutral-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="20" x2="18" y2="10"></line>
-              <line x1="12" y1="20" x2="12" y2="4"></line>
-              <line x1="6" y1="20" x2="6" y2="14"></line>
-            </svg>
-            <span>Cost & Capability Charts</span>
+            <svg class="w-4 h-4 text-neutral-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <span>Pareto Frontier & Charts</span>
+          </a>
+
+          <a href="https://gap.sdj.com.np" target="_blank" rel="noopener noreferrer" class="btn-action inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-medium text-blue-600 bg-blue-50/80 hover:bg-blue-100 border border-blue-200 transition-colors">
+            <span>Official Benchmark Site</span>
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
           </a>
         </div>
 
-        <!-- KPI SUMMARY STRIP -->
+        <!-- KPI SUMMARY STRIP (Artificial Analysis Authority) -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           
           <div class="clean-card rounded-xl p-4 sm:p-5">
             <div class="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1 flex items-center justify-between">
-              <span>#1 Leader</span>
-              <svg class="w-3.5 h-3.5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="6"></circle>
-                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
-              </svg>
+              <span>#1 Frontier Leader</span>
+              <svg class="w-3.5 h-3.5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
             </div>
             <div id="statTopModel" class="text-xl sm:text-2xl font-semibold text-neutral-950 tracking-tight truncate">
               —
@@ -328,11 +340,8 @@
 
           <div class="clean-card rounded-xl p-4 sm:p-5">
             <div class="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1 flex items-center justify-between">
-              <span>Best Efficiency</span>
-              <svg class="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-                <polyline points="16 7 22 7 22 13"></polyline>
-              </svg>
+              <span>Best Cost/Perf</span>
+              <svg class="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
             </div>
             <div id="statBestEfficiency" class="text-xl sm:text-2xl font-semibold text-neutral-950 tracking-tight truncate">
               —
@@ -345,10 +354,7 @@
           <div class="clean-card rounded-xl p-4 sm:p-5">
             <div class="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1 flex items-center justify-between">
               <span>Lowest Cost</span>
-              <svg class="w-3.5 h-3.5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="1" x2="12" y2="23"></line>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-              </svg>
+              <svg class="w-3.5 h-3.5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
             </div>
             <div id="statLowestCost" class="text-xl sm:text-2xl font-semibold text-neutral-950 tracking-tight truncate">
               —
@@ -360,18 +366,14 @@
 
           <div class="clean-card rounded-xl p-4 sm:p-5">
             <div class="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1 flex items-center justify-between">
-              <span>Benchmark Scope</span>
-              <svg class="w-3.5 h-3.5 text-neutral-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                <polyline points="2 17 12 22 22 17"></polyline>
-                <polyline points="2 12 12 17 22 12"></polyline>
-              </svg>
+              <span>Evaluated Models</span>
+              <svg class="w-3.5 h-3.5 text-neutral-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
             </div>
-            <div class="text-xl sm:text-2xl font-semibold text-neutral-950 tracking-tight">
-              Top 10
+            <div id="statEvaluatedCount" class="text-xl sm:text-2xl font-semibold text-neutral-950 tracking-tight">
+              —
             </div>
-            <div id="statEvaluatedCount" class="text-xs text-neutral-500 mt-1 font-mono">
-              Verified Frontier
+            <div class="text-xs text-neutral-500 mt-1 font-mono">
+              Live Verified
             </div>
           </div>
 
@@ -380,36 +382,166 @@
       </div>
     </section>
 
-    <!-- SECTION: LEADERBOARD TABLE (Top 10 strictly shown, robust against 50-60+ models) -->
-    <section id="leaderboard" class="py-14 bg-[#fafafa] border-b border-neutral-200">
+    <!-- SECTION: VISUAL ANALYTICS & VARIETY OF CHARTS (Artificial Analysis + Arena Style) -->
+    <section id="charts" class="py-16 bg-[#fafafa] border-b border-neutral-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+          <div>
+            <div class="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1">
+              VISUAL BENCHMARK MATRIX
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-semibold text-neutral-950 tracking-tight-display">
+              Frontier Analytics & Trade-Offs
+            </h2>
+            <p class="text-sm text-neutral-600 mt-1">
+              Explore multi-variable trade-offs between reasoning score, inference compute cost, and throughput.
+            </p>
+          </div>
+
+          <!-- Official Portal Deep Link -->
+          <a href="https://gap.sdj.com.np" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-mono text-blue-600 hover:text-blue-800 bg-white border border-neutral-200 rounded-lg px-3 py-2 shadow-xs">
+            <span>Detailed Sub-Task Metrics on gap.sdj.com.np</span>
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          </a>
+        </div>
+
+        <!-- Interactive Chart Mode Switcher (Artificial Analysis Tab Bar) -->
+        <div class="flex flex-wrap items-center gap-2 mb-6 p-1.5 bg-neutral-200/60 rounded-xl border border-neutral-200 w-fit">
+          <button type="button" data-chartview="grid" class="chart-tab active text-xs font-semibold px-3 py-1.5 rounded-lg bg-white text-neutral-950 shadow-sm transition-all">
+            All 4 Analytics Views
+          </button>
+          <button type="button" data-chartview="pareto" class="chart-tab text-xs font-medium px-3 py-1.5 rounded-lg text-neutral-600 hover:text-neutral-950 hover:bg-white/60 transition-all">
+            Pareto Frontier (Cost vs Quality)
+          </button>
+          <button type="button" data-chartview="scores" class="chart-tab text-xs font-medium px-3 py-1.5 rounded-lg text-neutral-600 hover:text-neutral-950 hover:bg-white/60 transition-all">
+            Ranked Score Matrix
+          </button>
+          <button type="button" data-chartview="efficiency" class="chart-tab text-xs font-medium px-3 py-1.5 rounded-lg text-neutral-600 hover:text-neutral-950 hover:bg-white/60 transition-all">
+            Intelligence per Dollar
+          </button>
+          <button type="button" data-chartview="speed" class="chart-tab text-xs font-medium px-3 py-1.5 rounded-lg text-neutral-600 hover:text-neutral-950 hover:bg-white/60 transition-all">
+            Quality vs Speed (TPTask)
+          </button>
+        </div>
+
+        <!-- Charts Grid / Container -->
+        <div id="chartsContainer" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          
+          <!-- Chart 1: PARETO FRONTIER SCATTER WITH OPTIMAL CURVE (Artificial Analysis Signature) -->
+          <div id="cardPareto" class="clean-card rounded-xl p-5 sm:p-6 bg-white flex flex-col">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Trade-Off Analysis</span>
+                <h3 class="text-base font-semibold text-neutral-900 mt-0.5">Pareto Frontier: Score vs. Cost</h3>
+                <p class="text-xs text-neutral-500 mt-0.5">X-axis: Compute Cost ($). Y-axis: GAP Score. Models in the top-left define the optimal frontier.</p>
+              </div>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">Optimal Frontier</span>
+            </div>
+            <div class="relative w-full h-80 flex-grow">
+              <canvas id="scatterChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Chart 2: HORIZONTAL SCORE MATRIX (Embedded Scores Inside Bars) -->
+          <div id="cardScores" class="clean-card rounded-xl p-5 sm:p-6 bg-white flex flex-col">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Capability Assessment</span>
+                <h3 class="text-base font-semibold text-neutral-900 mt-0.5">GAP Score Ranking (Embedded Values)</h3>
+                <p class="text-xs text-neutral-500 mt-0.5">Horizontal alignment gives full space for model names. Scores rendered directly inside bars.</p>
+              </div>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-neutral-100 text-neutral-600">Higher = Better</span>
+            </div>
+            <div class="relative w-full h-80 flex-grow">
+              <canvas id="scoreChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Chart 3: COST EFFICIENCY YIELD (Intelligence per Dollar) -->
+          <div id="cardEfficiency" class="clean-card rounded-xl p-5 sm:p-6 bg-white flex flex-col">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Economic ROI</span>
+                <h3 class="text-base font-semibold text-neutral-900 mt-0.5">Intelligence Yield per Dollar</h3>
+                <p class="text-xs text-neutral-500 mt-0.5">Calculated as Score / CPTask. Highlights models that deliver maximum reasoning per dollar.</p>
+              </div>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-neutral-100 text-neutral-600">Score / Cost ($)</span>
+            </div>
+            <div class="relative w-full h-80 flex-grow">
+              <canvas id="efficiencyChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Chart 4: QUALITY VS SPEED (TPTask Throughput Scatter) -->
+          <div id="cardSpeed" class="clean-card rounded-xl p-5 sm:p-6 bg-white flex flex-col">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Speed & Throughput</span>
+                <h3 class="text-base font-semibold text-neutral-900 mt-0.5">Quality vs. Task Throughput (TPTask)</h3>
+                <p class="text-xs text-neutral-500 mt-0.5">X-axis: Throughput units. Y-axis: GAP Score. Identifies models that are both fast and capable.</p>
+              </div>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200">Speed vs Quality</span>
+            </div>
+            <div class="relative w-full h-80 flex-grow">
+              <canvas id="speedQualityChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: LEADERBOARD MATRIX (Arena / Artificial Analysis Style) -->
+    <section id="leaderboard" class="py-16 bg-white border-b border-neutral-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Header -->
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
           <div>
             <div class="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1">
-              FRONTIER MODEL EVALUATION
+              BENCHMARK LEADERBOARD
             </div>
             <h2 class="text-2xl sm:text-3xl font-semibold text-neutral-950 tracking-tight-display">
-              General AGI Probe Leaderboard
+              Frontier Model Matrix
             </h2>
             <p class="text-sm text-neutral-600 mt-1">
-              Top 10 models ranked by empirical GAP Score, compute cost, and throughput.
+              Click ranking tabs to re-rank models by capability score, economic efficiency, or throughput speed.
             </p>
           </div>
 
-          <!-- Total Models Count Badge -->
-          <div id="modelCountBadge" class="text-xs font-mono text-neutral-600 bg-white border border-neutral-200 rounded-lg px-3 py-1.5 self-start sm:self-auto">
-            Showing Top 10 Models
+          <!-- Model count indicator -->
+          <div class="flex items-center gap-2">
+            <span id="modelCountBadge" class="text-xs font-mono text-neutral-600 bg-neutral-50 border border-neutral-200 rounded-lg px-3 py-1.5">
+              Top 10 Models
+            </span>
           </div>
+        </div>
+
+        <!-- 1-Click Ranking Modes (Artificial Analysis / Arena Style) -->
+        <div class="flex flex-wrap items-center gap-2 mb-4 p-1.5 bg-neutral-100/70 rounded-xl border border-neutral-200/80 w-fit">
+          <span class="text-[11px] font-mono uppercase text-neutral-400 px-2 font-medium">RANK BY:</span>
+          <button type="button" data-rank="score" class="rank-tab active text-xs font-semibold px-3 py-1.5 rounded-lg bg-white text-neutral-950 shadow-sm transition-all">
+            GAP Score (Frontier)
+          </button>
+          <button type="button" data-rank="efficiency" class="rank-tab text-xs font-medium px-3 py-1.5 rounded-lg text-neutral-600 hover:text-neutral-950 hover:bg-white/60 transition-all">
+            Cost Efficiency (Score / $)
+          </button>
+          <button type="button" data-rank="cost" class="rank-tab text-xs font-medium px-3 py-1.5 rounded-lg text-neutral-600 hover:text-neutral-950 hover:bg-white/60 transition-all">
+            Lowest Cost (CPTask)
+          </button>
+          <button type="button" data-rank="throughput" class="rank-tab text-xs font-medium px-3 py-1.5 rounded-lg text-neutral-600 hover:text-neutral-950 hover:bg-white/60 transition-all">
+            Throughput (TPTask)
+          </button>
         </div>
 
         <!-- Filter & Search Bar -->
         <div class="clean-card rounded-t-xl p-3 sm:p-4 bg-white border-b-0 flex flex-col sm:flex-row items-center justify-between gap-3">
           
-          <!-- Search -->
+          <!-- Search input -->
           <div class="relative w-full sm:w-72">
-            <svg class="w-4 h-4 text-neutral-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="w-4 h-4 text-neutral-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
@@ -430,14 +562,13 @@
             </button>
           </div>
 
-          <!-- Sort Select -->
+          <!-- Display Count Selector -->
           <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
-            <span class="text-xs font-mono text-neutral-400">SORT:</span>
-            <select id="sortSelect" class="text-xs font-medium bg-neutral-50 border border-neutral-200 rounded-md px-2.5 py-1.5 text-neutral-800 focus:outline-none">
-              <option value="score_desc">GAP Score (High → Low)</option>
-              <option value="cost_asc">Cost / CPTask (Low → High)</option>
-              <option value="tp_desc">Throughput / TPTask (High → Low)</option>
-              <option value="eff_desc">Efficiency (High → Low)</option>
+            <span class="text-xs font-mono text-neutral-400">VIEW:</span>
+            <select id="viewCountSelect" class="text-xs font-medium bg-neutral-50 border border-neutral-200 rounded-md px-2.5 py-1.5 text-neutral-800 focus:outline-none">
+              <option value="10" selected>Top 10 Models</option>
+              <option value="25">Top 25 Models</option>
+              <option value="all">All Evaluated Models</option>
             </select>
           </div>
 
@@ -455,7 +586,7 @@
                   <th scope="col" class="py-3 px-4 font-semibold text-right">GAP Score</th>
                   <th scope="col" class="py-3 px-4 font-semibold text-right">Cost (CPTask)</th>
                   <th scope="col" class="py-3 px-4 font-semibold text-right">Throughput (TPTask)</th>
-                  <th scope="col" class="py-3 px-4 font-semibold text-right">Efficiency</th>
+                  <th scope="col" class="py-3 px-4 font-semibold text-right">Efficiency Yield</th>
                   <th scope="col" class="py-3 px-4 font-semibold text-center">Type</th>
                 </tr>
               </thead>
@@ -469,16 +600,21 @@
             </table>
           </div>
 
-          <!-- Table Bottom Note -->
+          <!-- Table Bottom Bar -->
           <div class="p-4 bg-neutral-50/50 border-t border-neutral-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-500 font-mono">
-            <div>Strictly displaying top 10 models. Resilient null-safe parsing.</div>
             <div class="flex items-center gap-2">
+              <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span id="footerModelCount">Displaying verified models</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <a href="https://gap.sdj.com.np" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline flex items-center gap-1 font-sans font-medium">
+                <span>Official Telemetry (gap.sdj.com.np)</span>
+                <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+              </a>
+              <span class="text-neutral-300">|</span>
               <button id="copyJsonBtn" type="button" class="text-neutral-700 hover:text-neutral-950 inline-flex items-center gap-1 font-sans">
-                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
-                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
-                </svg>
-                <span>Copy Data JSON</span>
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+                <span>Copy JSON</span>
               </button>
             </div>
           </div>
@@ -487,98 +623,19 @@
       </div>
     </section>
 
-    <!-- SECTION: CHARTS (Multiple practical charts, top 10 models) -->
-    <section id="charts" class="py-16 bg-white border-b border-neutral-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="mb-10 text-center max-w-3xl mx-auto">
-          <div class="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1">
-            ANALYTICAL FRONTIERS
-          </div>
-          <h2 class="text-3xl font-semibold text-neutral-950 tracking-tight-display">
-            Benchmark Charts & Analysis
-          </h2>
-          <p class="text-sm text-neutral-600 mt-2">
-            Clear visual breakdowns of capability scores, cost-performance tradeoffs, efficiency yields, and execution throughput.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          
-          <!-- Chart 1: Score Bar Chart -->
-          <div class="clean-card rounded-xl p-5 sm:p-6 bg-white flex flex-col">
-            <div class="flex items-start justify-between mb-4">
-              <div>
-                <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Score Comparison</span>
-                <h3 class="text-base font-semibold text-neutral-900 mt-0.5">GAP Score Ranking</h3>
-              </div>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-neutral-100 text-neutral-600">Higher = Better</span>
-            </div>
-            <div class="relative w-full h-64 flex-grow">
-              <canvas id="scoreChart"></canvas>
-            </div>
-          </div>
-
-          <!-- Chart 2: Pareto Scatter (Cost vs Performance) -->
-          <div class="clean-card rounded-xl p-5 sm:p-6 bg-white flex flex-col">
-            <div class="flex items-start justify-between mb-4">
-              <div>
-                <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Pareto Frontier</span>
-                <h3 class="text-base font-semibold text-neutral-900 mt-0.5">Score vs. Compute Cost (CPTask)</h3>
-              </div>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-neutral-100 text-neutral-600">Top-Left is Optimal</span>
-            </div>
-            <div class="relative w-full h-64 flex-grow">
-              <canvas id="scatterChart"></canvas>
-            </div>
-          </div>
-
-          <!-- Chart 3: Cost Efficiency -->
-          <div class="clean-card rounded-xl p-5 sm:p-6 bg-white flex flex-col">
-            <div class="flex items-start justify-between mb-4">
-              <div>
-                <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Economic ROI</span>
-                <h3 class="text-base font-semibold text-neutral-900 mt-0.5">Intelligence Yield per Dollar</h3>
-              </div>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-neutral-100 text-neutral-600">Score / Cost</span>
-            </div>
-            <div class="relative w-full h-64 flex-grow">
-              <canvas id="efficiencyChart"></canvas>
-            </div>
-          </div>
-
-          <!-- Chart 4: TPTask Throughput -->
-          <div class="clean-card rounded-xl p-5 sm:p-6 bg-white flex flex-col">
-            <div class="flex items-start justify-between mb-4">
-              <div>
-                <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Execution Speed</span>
-                <h3 class="text-base font-semibold text-neutral-900 mt-0.5">Task Throughput (TPTask)</h3>
-              </div>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-neutral-100 text-neutral-600">Throughput Index</span>
-            </div>
-            <div class="relative w-full h-64 flex-grow">
-              <canvas id="throughputChart"></canvas>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION: HEAD-TO-HEAD COMPARISON TOOL -->
-    <section id="compare" class="py-14 bg-[#fafafa] border-b border-neutral-200">
+    <!-- SECTION: HEAD-TO-HEAD BATTLE TOOL (LMSYS Chatbot Arena Style) -->
+    <section id="compare" class="py-16 bg-[#fafafa] border-b border-neutral-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="mb-6">
           <div class="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1">
-            PRACTICAL EVALUATION TOOL
+            HEAD-TO-HEAD DECISION ENGINE
           </div>
           <h2 class="text-2xl sm:text-3xl font-semibold text-neutral-950 tracking-tight-display">
-            Head-to-Head Model Compare
+            Direct Model Battle & Trade-Offs
           </h2>
           <p class="text-sm text-neutral-600 mt-1">
-            Compare any two models to inspect score differences, cost trade-offs, and throughput metrics.
+            Compare any two frontier models across reasoning capability, compute cost, and throughput metrics.
           </p>
         </div>
 
@@ -596,26 +653,26 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
             <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
-              <div class="text-xs font-mono text-neutral-500 uppercase">Score Delta</div>
+              <div class="text-xs font-mono text-neutral-500 uppercase">GAP Score Delta</div>
               <div id="cmpScoreDelta" class="text-2xl font-semibold text-neutral-900 mt-1 tabular-numbers">—</div>
-              <div id="cmpScoreSub" class="text-xs text-neutral-500 mt-0.5">GAP Score difference</div>
+              <div id="cmpScoreSub" class="text-xs text-neutral-500 mt-0.5">Composite reasoning difference</div>
             </div>
 
             <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
               <div class="text-xs font-mono text-neutral-500 uppercase">Cost (CPTask) Delta</div>
               <div id="cmpCostDelta" class="text-2xl font-semibold text-neutral-900 mt-1 tabular-numbers">—</div>
-              <div id="cmpCostSub" class="text-xs text-neutral-500 mt-0.5">Price difference per task</div>
+              <div id="cmpCostSub" class="text-xs text-neutral-500 mt-0.5">Compute cost per problem</div>
             </div>
 
             <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
               <div class="text-xs font-mono text-neutral-500 uppercase">Throughput (TPTask) Delta</div>
               <div id="cmpTpDelta" class="text-2xl font-semibold text-neutral-900 mt-1 tabular-numbers">—</div>
-              <div id="cmpTpSub" class="text-xs text-neutral-500 mt-0.5">Execution speed difference</div>
+              <div id="cmpTpSub" class="text-xs text-neutral-500 mt-0.5">Processing speed difference</div>
             </div>
           </div>
 
-          <div id="cmpAnalysisText" class="p-3.5 rounded-lg bg-neutral-50 border border-neutral-200 text-xs sm:text-sm text-neutral-700 leading-relaxed">
-            Select models to generate head-to-head comparison.
+          <div id="cmpAnalysisText" class="p-4 rounded-lg bg-neutral-50 border border-neutral-200 text-xs sm:text-sm text-neutral-700 leading-relaxed">
+            Select models to generate head-to-head evaluation.
           </div>
         </div>
 
@@ -626,48 +683,69 @@
     <section id="methodology" class="py-16 bg-white border-b border-neutral-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="max-w-3xl mb-12">
-          <div class="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1">
-            TESTING PHILOSOPHY
-          </div>
-          <h2 class="text-3xl font-semibold text-neutral-950 tracking-tight-display">
-            The General AGI Probe Method
-          </h2>
-          <p class="text-base text-neutral-600 mt-3 leading-relaxed">
-            As tech companies announce AGI milestones, GAP was established to provide an unbiased, independent evaluation framework. We assess whether models demonstrate genuine generalization or merely recite pre-training memorization.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
-          <div class="p-6 rounded-xl border border-neutral-200 bg-white">
-            <div class="w-8 h-8 rounded-md bg-neutral-900 text-white flex items-center justify-center font-mono text-xs font-semibold mb-4">
-              01
+          <div class="lg:col-span-5">
+            <div class="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1">
+              SCIENTIFIC RIGOR
             </div>
-            <h3 class="text-base font-semibold text-neutral-950 mb-2">Unseen Algorithmic Reasoning</h3>
-            <p class="text-sm text-neutral-600 leading-relaxed">
-              Dynamically generated tasks that cannot be found in internet datasets. Models must synthesize logical steps in real time.
+            <h2 class="text-3xl font-semibold text-neutral-950 tracking-tight-display mb-4">
+              The General AGI Probe Method
+            </h2>
+            <p class="text-neutral-600 text-sm leading-relaxed mb-4">
+              Traditional benchmarks (MMLU, GSM8K, HumanEval) suffered from pervasive pre-training contamination and dataset memorization. When a model scores high on static test banks, it often repeats memorized patterns rather than demonstrating general intelligence.
             </p>
+            <p class="text-neutral-600 text-sm leading-relaxed mb-6">
+              GAP tests genuine out-of-distribution reasoning, multi-step autonomous planning, and real compute cost to establish an ungameable AGI frontier.
+            </p>
+
+            <!-- Official Site Box -->
+            <div class="p-5 rounded-xl border border-neutral-200 bg-neutral-50/70 text-xs font-mono space-y-3">
+              <div class="font-semibold text-neutral-900 uppercase">Official Benchmark Platform</div>
+              <p class="text-neutral-500 leading-normal">
+                Access complete prompt evaluations, raw response traces, and downloadable test seeds on the official site.
+              </p>
+              <a href="https://gap.sdj.com.np" target="_blank" class="inline-flex items-center gap-1.5 text-blue-600 font-semibold hover:underline">
+                <span>https://gap.sdj.com.np</span>
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+              </a>
+            </div>
           </div>
 
-          <div class="p-6 rounded-xl border border-neutral-200 bg-white">
-            <div class="w-8 h-8 rounded-md bg-neutral-900 text-white flex items-center justify-center font-mono text-xs font-semibold mb-4">
-              02
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <div class="p-5 rounded-xl border border-neutral-200 bg-white">
+              <div class="w-7 h-7 rounded bg-[#43003b] text-white flex items-center justify-center font-mono text-xs font-semibold mb-3">01</div>
+              <h3 class="text-sm font-semibold text-neutral-950 mb-1.5">Unseen Algorithmic Reasoning</h3>
+              <p class="text-xs text-neutral-600 leading-relaxed">
+                Dynamic, procedurally generated logic problems that cannot be pre-memorized from scraped web text.
+              </p>
             </div>
-            <h3 class="text-base font-semibold text-neutral-950 mb-2">Task Processing Throughput (TPTask)</h3>
-            <p class="text-sm text-neutral-600 leading-relaxed">
-              Evaluates execution speed and planning coherence over multi-step autonomous tool calls and complex workflows.
-            </p>
-          </div>
 
-          <div class="p-6 rounded-xl border border-neutral-200 bg-white">
-            <div class="w-8 h-8 rounded-md bg-neutral-900 text-white flex items-center justify-center font-mono text-xs font-semibold mb-4">
-              03
+            <div class="p-5 rounded-xl border border-neutral-200 bg-white">
+              <div class="w-7 h-7 rounded bg-[#43003b] text-white flex items-center justify-center font-mono text-xs font-semibold mb-3">02</div>
+              <h3 class="text-sm font-semibold text-neutral-950 mb-1.5">Task Processing Throughput (TPTask)</h3>
+              <p class="text-xs text-neutral-600 leading-relaxed">
+                Measures execution speed and reasoning efficiency over multi-turn autonomous tool operations.
+              </p>
             </div>
-            <h3 class="text-base font-semibold text-neutral-950 mb-2">Compute Cost per Task (CPTask)</h3>
-            <p class="text-sm text-neutral-600 leading-relaxed">
-              Measures inference cost in dollars per completed task, establishing the realistic economic frontier for production use.
-            </p>
+
+            <div class="p-5 rounded-xl border border-neutral-200 bg-white">
+              <div class="w-7 h-7 rounded bg-[#43003b] text-white flex items-center justify-center font-mono text-xs font-semibold mb-3">03</div>
+              <h3 class="text-sm font-semibold text-neutral-950 mb-1.5">Compute Cost per Task (CPTask)</h3>
+              <p class="text-xs text-neutral-600 leading-relaxed">
+                Tracks dollar cost per completed task to distinguish economically viable models from compute-wasteful ones.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-xl border border-neutral-200 bg-white">
+              <div class="w-7 h-7 rounded bg-[#43003b] text-white flex items-center justify-center font-mono text-xs font-semibold mb-3">04</div>
+              <h3 class="text-sm font-semibold text-neutral-950 mb-1.5">Zero-Sponsorship Impartiality</h3>
+              <p class="text-xs text-neutral-600 leading-relaxed">
+                Completely independent. No vendor sponsorships, no lab credits, and zero commercial evaluation bias.
+              </p>
+            </div>
+
           </div>
 
         </div>
@@ -692,50 +770,42 @@
           
           <details class="clean-card rounded-xl p-5 bg-white group" open>
             <summary class="flex items-center justify-between font-semibold text-neutral-900 cursor-pointer list-none text-sm sm:text-base">
-              <span>What does GAP stand for?</span>
-              <svg class="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
+              <span>What is GAP and what does it probe?</span>
+              <svg class="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <p class="mt-3 text-sm text-neutral-600 leading-relaxed border-t border-neutral-100 pt-3">
-              GAP stands for <strong>General AGI Probe</strong>. As labs announce that they have achieved AGI, GAP independently probes and verifies those claims through standardized testing of real generalization capabilities.
+              GAP stands for <strong>General AGI Probe</strong>. As tech companies claim they have achieved AGI, GAP independently probes and verifies those claims through rigorous testing of novel reasoning adaptability, execution throughput, and real compute cost.
             </p>
           </details>
 
           <details class="clean-card rounded-xl p-5 bg-white group">
             <summary class="flex items-center justify-between font-semibold text-neutral-900 cursor-pointer list-none text-sm sm:text-base">
-              <span>What do the TPTask and CPTask metrics mean?</span>
-              <svg class="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
+              <span>What do the TPTask and CPTask metrics represent?</span>
+              <svg class="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <div class="mt-3 text-sm text-neutral-600 leading-relaxed border-t border-neutral-100 pt-3 space-y-2">
-              <p><strong>TPTask (Task Processing Throughput):</strong> Measures model processing speed and completion throughput across standardized benchmark problem sets.</p>
-              <p><strong>CPTask (Compute Cost per Task):</strong> Measures the inference cost in USD required to complete each evaluation problem.</p>
+              <p><strong>TPTask (Task Processing Throughput):</strong> Quantifies execution speed, tokens processed per problem, and planning throughput.</p>
+              <p><strong>CPTask (Compute Cost per Task):</strong> Measures inference cost in US Dollars required to execute standardized benchmark tasks.</p>
             </div>
           </details>
 
           <details class="clean-card rounded-xl p-5 bg-white group">
             <summary class="flex items-center justify-between font-semibold text-neutral-900 cursor-pointer list-none text-sm sm:text-base">
-              <span>Why are only top 10 models displayed?</span>
-              <svg class="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
+              <span>Where can I view the official benchmark portal and prompt logs?</span>
+              <svg class="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <p class="mt-3 text-sm text-neutral-600 leading-relaxed border-t border-neutral-100 pt-3">
-              To keep the leaderboard high-signal and focused on current frontier performers, GAP displays the top 10 ranked models based on composite GAP Score.
+              Full task-level telemetry, trace dumps, and detailed evaluation write-ups are published on the official platform at <a href="https://gap.sdj.com.np" target="_blank" class="text-blue-600 hover:underline font-mono">https://gap.sdj.com.np</a>.
             </p>
           </details>
 
           <details class="clean-card rounded-xl p-5 bg-white group">
             <summary class="flex items-center justify-between font-semibold text-neutral-900 cursor-pointer list-none text-sm sm:text-base">
-              <span>How are missing attributes handled?</span>
-              <svg class="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
+              <span>How does GAP handle missing values in model data?</span>
+              <svg class="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <p class="mt-3 text-sm text-neutral-600 leading-relaxed border-t border-neutral-100 pt-3">
-              GAP's data ingestion handles incomplete records cleanly. If a model lacks an author or has unrecorded TPTask or CPTask values, it renders without errors or disruptions.
+              GAP uses resilient null-safe parsing: if an evaluated model has no recorded author, missing throughput, or unpriced CPTask, it renders cleanly with fallback indicators without breaking comparative visual charts.
             </p>
           </details>
 
@@ -752,11 +822,12 @@
       
       <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-neutral-100">
         <div class="flex items-center gap-2.5">
-          <div class="w-6 h-6 rounded bg-neutral-950 text-white flex items-center justify-center font-mono font-bold text-xs">GAP</div>
+          <div class="w-6 h-6 rounded bg-[#43003b] text-white flex items-center justify-center font-mono font-bold text-xs">GAP</div>
           <span class="font-semibold text-neutral-900">GAP Benchmark — General AGI Probe</span>
         </div>
 
         <div class="flex items-center gap-6">
+          <a href="https://gap.sdj.com.np" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 transition-colors font-medium">Official Benchmark Site (gap.sdj.com.np)</a>
           <a href="https://github.com/GAP-benchmark" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-950 transition-colors">GitHub</a>
           <a href="https://huggingface.co/GAP-benchmark" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-950 transition-colors">Hugging Face</a>
           <a href="https://x.com/GAP_benchmark" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-950 transition-colors">X (Twitter)</a>
@@ -768,30 +839,30 @@
           © 2026 GAP Benchmark. Independent research evaluation.
         </div>
         <div>
-          Top 10 Frontier Models
+          Frontier AI Evaluation Matrix
         </div>
       </div>
 
     </div>
   </footer>
 
-  <!-- SCRIPT: RFC-4180 COMPLIANT PARSER & LOGIC -->
+  <!-- SCRIPT: ENGINE, ADVANCED PARETO FRONTIER, EMBEDDED TOWER PLUGINS & LIVE CSV SYNC -->
   <script>
-    // Live endpoint
     const CSV_URL = 'https://leaderboard-5kj.pages.dev/data.csv';
 
     let allModels = [];
     let displayedModels = [];
     let currentFilter = 'all';
-    let currentSort = 'score_desc';
+    let currentRankMode = 'score';
+    let currentViewCount = 10;
+    let currentChartView = 'grid'; // 'grid' | 'pareto' | 'scores' | 'efficiency' | 'speed'
 
     // Chart instances
     let scoreChart = null;
     let scatterChart = null;
     let efficiencyChart = null;
-    let throughputChart = null;
+    let speedQualityChart = null;
 
-    // Helper: Escape HTML
     function escapeHtml(str) {
       if (!str) return '';
       return String(str)
@@ -802,13 +873,12 @@
         .replace(/'/g, '&#039;');
     }
 
-    // Helper: Capitalize nicely
     function capitalize(str) {
       if (!str || str.trim() === '') return '—';
       return str.trim().split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
     }
 
-    // RFC-4180 CSV Row Parser (handles quotes, commas inside quotes, escapes)
+    // RFC-4180 CSV Row Parser
     function parseCSVRow(text) {
       let p = '', c = '', r = [];
       let q = false;
@@ -829,7 +899,7 @@
       return r;
     }
 
-    // ROBUST CSV PARSER: Works on 2 models, 50-60 models, and worst-case dirty data
+    // Robust CSV Parser
     function parseCSV(csvText) {
       if (!csvText || typeof csvText !== 'string') return [];
       const lines = csvText.split(/\r?\n/).filter(l => l.trim().length > 0);
@@ -868,21 +938,20 @@
         const cpVal = parseFloat(rawCPStr);
         const cpTask = (!isNaN(cpVal) && isFinite(cpVal) && cpVal >= 0) ? cpVal : null;
 
-        // Cost Efficiency = Score / CPTask (guard against division by 0)
+        // Cost Efficiency = Score / CPTask (division by zero guard)
         let efficiency = null;
         if (cpTask !== null && cpTask > 0 && score > 0) {
           efficiency = score / cpTask;
         }
 
-        // Open Source boolean
+        // Open source boolean
         const isOpenSource = (rawOpenStr === 'true' || rawOpenStr === '1' || rawOpenStr === 'yes');
 
-        // Author fallback
+        // Author & Model fallbacks
         const author = (rawAuthor && rawAuthor.toLowerCase() !== 'none' && rawAuthor.toLowerCase() !== 'n/a')
           ? rawAuthor 
           : 'Independent';
 
-        // Model Name fallback
         const modelName = rawModel || `Model ${i}`;
 
         models.push({
@@ -896,14 +965,6 @@
           isOpenSource
         });
       }
-
-      // Sort all models descending by Score
-      models.sort((a, b) => b.score - a.score);
-
-      // Assign official ranks across all models
-      models.forEach((m, idx) => {
-        m.rank = idx + 1;
-      });
 
       return models;
     }
@@ -924,7 +985,7 @@
         const text = await res.text();
         allModels = parseCSV(text);
       } catch (err) {
-        console.warn('Network fetch error, trying local fallback:', err);
+        console.warn('Network fetch error, falling back to local dataset mirror:', err);
         try {
           const localRes = await fetch('data.csv');
           const localText = await localRes.text();
@@ -941,11 +1002,11 @@
       }
     }
 
-    // PROCESS, FILTER, AND SLICE STRICTLY TOP 10 MODELS
+    // PROCESS RANKING, FILTERING, & DISPLAY SLICE
     function processAndRender() {
       const search = (document.getElementById('searchInput')?.value || '').toLowerCase().trim();
 
-      // Filter by open/proprietary
+      // Filter by open/closed
       let filtered = allModels.filter(m => {
         if (currentFilter === 'opensource') return m.isOpenSource === true;
         if (currentFilter === 'proprietary') return m.isOpenSource === false;
@@ -960,33 +1021,46 @@
         );
       }
 
-      // Sort
+      // Dynamic Ranking Sort
       filtered.sort((a, b) => {
-        switch (currentSort) {
-          case 'score_desc': return b.score - a.score;
-          case 'cost_asc':
-            return (a.cpTask === null ? 999999 : a.cpTask) - (b.cpTask === null ? 999999 : b.cpTask);
-          case 'tp_desc':
-            return (b.tpTask === null ? -1 : b.tpTask) - (a.tpTask === null ? -1 : a.tpTask);
-          case 'eff_desc':
+        switch (currentRankMode) {
+          case 'score':
+            return b.score - a.score;
+          case 'efficiency':
             return (b.efficiency === null ? -1 : b.efficiency) - (a.efficiency === null ? -1 : a.efficiency);
-          default: return b.score - a.score;
+          case 'cost':
+            return (a.cpTask === null ? 999999 : a.cpTask) - (b.cpTask === null ? 999999 : b.cpTask);
+          case 'throughput':
+            return (b.tpTask === null ? -1 : b.tpTask) - (a.tpTask === null ? -1 : a.tpTask);
+          default:
+            return b.score - a.score;
         }
       });
 
-      // STRICT USER RULE: Only show top 10 models
-      displayedModels = filtered.slice(0, 10);
+      // Assign ranks post-sort
+      filtered.forEach((m, idx) => {
+        m.currentRank = idx + 1;
+      });
+
+      // Slice based on viewCount
+      if (currentViewCount === 'all') {
+        displayedModels = filtered;
+      } else {
+        const count = parseInt(currentViewCount, 10) || 10;
+        displayedModels = filtered.slice(0, count);
+      }
 
       renderStats();
       renderTable();
       renderCharts();
     }
 
-    // RENDER KPI TILES
+    // RENDER KPI STATS
     function renderStats() {
       if (allModels.length === 0) return;
 
-      const top = allModels[0];
+      const byScore = [...allModels].sort((a, b) => b.score - a.score);
+      const top = byScore[0];
       const topModelEl = document.getElementById('statTopModel');
       const topScoreEl = document.getElementById('statTopScore');
       if (topModelEl && top) {
@@ -1012,14 +1086,22 @@
         costValEl.textContent = `$${validCost[0].cpTask.toFixed(1)} / task`;
       }
 
-      // Total count badge
+      // Total count
       const countEl = document.getElementById('statEvaluatedCount');
       const countBadge = document.getElementById('modelCountBadge');
-      if (countEl) countEl.textContent = `${allModels.length} Models Tested`;
-      if (countBadge) countBadge.textContent = `Showing Top 10 of ${allModels.length} Models`;
+      const footerCount = document.getElementById('footerModelCount');
+      if (countEl) countEl.textContent = `${allModels.length} Models`;
+      if (countBadge) {
+        countBadge.textContent = displayedModels.length === allModels.length 
+          ? `All ${allModels.length} Models` 
+          : `Top ${displayedModels.length} of ${allModels.length} Models`;
+      }
+      if (footerCount) {
+        footerCount.textContent = `Displaying ${displayedModels.length} of ${allModels.length} evaluated models`;
+      }
     }
 
-    // RENDER LEADERBOARD ROWS
+    // RENDER TABLE ROWS (WITH INLINE SCORE BARS & LOGOS)
     function renderTable() {
       const tbody = document.getElementById('leaderboardBody');
       if (!tbody) return;
@@ -1028,19 +1110,21 @@
         tbody.innerHTML = `
           <tr>
             <td colspan="8" class="py-8 text-center text-neutral-400 font-mono text-xs">
-              No models match current filter.
+              No models match current search.
             </td>
           </tr>
         `;
         return;
       }
 
+      const maxScore = Math.max(...allModels.map(m => m.score), 3.0);
+
       let html = '';
       displayedModels.forEach(m => {
-        const rankBadge = m.rank === 1 ? `<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-100 text-amber-900 font-bold text-xs">1</span>` :
-                          m.rank === 2 ? `<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-neutral-200 text-neutral-800 font-semibold text-xs">2</span>` :
-                          m.rank === 3 ? `<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-50 text-amber-800 font-medium text-xs">3</span>` :
-                          `<span class="text-neutral-500 font-mono text-xs">${m.rank}</span>`;
+        const rankBadge = m.currentRank === 1 ? `<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-100 text-amber-900 font-bold text-xs">1</span>` :
+                          m.currentRank === 2 ? `<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-neutral-200 text-neutral-800 font-semibold text-xs">2</span>` :
+                          m.currentRank === 3 ? `<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-50 text-amber-800 font-medium text-xs">3</span>` :
+                          `<span class="text-neutral-500 font-mono text-xs">${m.currentRank}</span>`;
 
         const costDisplay = m.cpTask !== null ? `$${m.cpTask.toFixed(1)}` : `<span class="text-neutral-300">—</span>`;
         const tpDisplay = m.tpTask !== null ? m.tpTask.toLocaleString() : `<span class="text-neutral-300">—</span>`;
@@ -1050,19 +1134,26 @@
           ? `<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">Open</span>`
           : `<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-neutral-100 text-neutral-700 border border-neutral-200">Closed</span>`;
 
+        const barPercent = Math.min(100, Math.max(10, (m.score / maxScore) * 100));
+
         html += `
           <tr class="hover:bg-neutral-50/70 transition-colors">
             <td class="py-3.5 px-4 text-center font-mono">${rankBadge}</td>
             <td class="py-3.5 px-4 font-semibold text-neutral-950">
-              <span class="inline-block max-w-[180px] sm:max-w-[260px] truncate" title="${escapeHtml(capitalize(m.modelName))}">
+              <span class="inline-block max-w-[200px] sm:max-w-[300px] truncate" title="${escapeHtml(capitalize(m.modelName))}">
                 ${escapeHtml(capitalize(m.modelName))}
               </span>
             </td>
             <td class="py-3.5 px-4 text-neutral-600 font-mono text-xs">
-              ${escapeHtml(capitalize(m.author))}
+              <span class="px-2 py-1 rounded bg-neutral-100/80 border border-neutral-200/50">${escapeHtml(capitalize(m.author))}</span>
             </td>
-            <td class="py-3.5 px-4 text-right font-mono font-bold text-neutral-950 tabular-numbers">
-              ${m.score.toFixed(2)}
+            <td class="py-3.5 px-4 text-right">
+              <div class="inline-flex flex-col items-end">
+                <span class="font-mono font-bold text-neutral-950 text-sm tabular-numbers">${m.score.toFixed(2)}</span>
+                <div class="w-16 h-1.5 bg-neutral-100 rounded-full mt-1 overflow-hidden">
+                  <div class="h-full bg-[#43003b] rounded-full" style="width: ${barPercent}%"></div>
+                </div>
+              </div>
             </td>
             <td class="py-3.5 px-4 text-right font-mono text-xs text-neutral-700 tabular-numbers">${costDisplay}</td>
             <td class="py-3.5 px-4 text-right font-mono text-xs text-neutral-700 tabular-numbers">${tpDisplay}</td>
@@ -1075,6 +1166,57 @@
       tbody.innerHTML = html;
     }
 
+    // CUSTOM CHART.JS PLUGIN: DRAWS SCORE NUMBERS DIRECTLY INSIDE BARS / TOWERS
+    const scoreInBarPlugin = {
+      id: 'scoreInBar',
+      afterDatasetsDraw(chart) {
+        const { ctx, data } = chart;
+        chart.getDatasetMeta(0).data.forEach((bar, index) => {
+          const val = data.datasets[0].data[index];
+          if (val === null || val === undefined || isNaN(val)) return;
+
+          ctx.save();
+          ctx.font = '600 11px Inter, sans-serif';
+
+          if (chart.config.options.indexAxis === 'y') {
+            // Horizontal Bar: Score inside bar or right beside it
+            const text = typeof val === 'number' ? val.toFixed(2) : String(val);
+            const textWidth = ctx.measureText(text).width;
+            const barWidth = Math.abs(bar.x - bar.base);
+
+            if (barWidth > textWidth + 18) {
+              ctx.fillStyle = '#ffffff';
+              ctx.textAlign = 'right';
+              ctx.textBaseline = 'middle';
+              ctx.fillText(text, bar.x - 8, bar.y);
+            } else {
+              ctx.fillStyle = '#111827';
+              ctx.textAlign = 'left';
+              ctx.textBaseline = 'middle';
+              ctx.fillText(text, bar.x + 8, bar.y);
+            }
+          } else {
+            // Vertical Tower: Score inside tower near the top
+            const text = typeof val === 'number' ? (val < 10 ? val.toFixed(2) : Math.round(val).toString()) : String(val);
+            const barHeight = Math.abs(bar.base - bar.y);
+
+            if (barHeight > 24) {
+              ctx.fillStyle = '#ffffff';
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'top';
+              ctx.fillText(text, bar.x, bar.y + 6);
+            } else {
+              ctx.fillStyle = '#111827';
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'bottom';
+              ctx.fillText(text, bar.x, bar.y - 4);
+            }
+          }
+          ctx.restore();
+        });
+      }
+    };
+
     // RENDER CHARTS
     function renderCharts() {
       if (displayedModels.length === 0) return;
@@ -1083,10 +1225,11 @@
       Chart.defaults.font.size = 11;
       Chart.defaults.color = '#71717a';
 
-      const labels = displayedModels.map(m => capitalize(m.modelName));
-      const scores = displayedModels.map(m => m.score);
+      const chartModels = displayedModels.slice(0, 10);
+      const labels = chartModels.map(m => capitalize(m.modelName));
+      const scores = chartModels.map(m => m.score);
 
-      // Chart 1: GAP Score Bar Chart
+      // CHART 1: HORIZONTAL SCORE MATRIX (Embedded Scores Inside Bars)
       const ctxScore = document.getElementById('scoreChart');
       if (ctxScore) {
         if (scoreChart) scoreChart.destroy();
@@ -1096,12 +1239,14 @@
             labels: labels,
             datasets: [{
               data: scores,
-              backgroundColor: '#0066cc',
+              backgroundColor: '#43003b',
               borderRadius: 4,
-              barThickness: 24
+              barThickness: 20
             }]
           },
+          plugins: [scoreInBarPlugin],
           options: {
+            indexAxis: 'y', // Horizontal bars: model names have full space on Y axis!
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
@@ -1111,38 +1256,186 @@
                 padding: 10,
                 cornerRadius: 6,
                 callbacks: {
-                  label: (ctx) => `GAP Score: ${ctx.parsed.y.toFixed(2)}`
+                  label: (ctx) => `GAP Score: ${ctx.parsed.x.toFixed(2)}`
                 }
               }
             },
             scales: {
-              y: { beginAtZero: true, grid: { color: '#f4f4f5' } },
-              x: { grid: { display: false }, ticks: { maxRotation: 0 } }
+              x: {
+                beginAtZero: true,
+                grid: { color: '#f4f4f5' },
+                ticks: { font: { family: 'monospace' } }
+              },
+              y: {
+                grid: { display: false },
+                ticks: {
+                  font: { weight: '500' },
+                  callback: function(val, index) {
+                    const text = this.getLabelForValue(val);
+                    return text.length > 22 ? text.substring(0, 20) + '...' : text;
+                  }
+                }
+              }
             }
           }
         });
       }
 
-      // Chart 2: Pareto Scatter
+      // CHART 2: PARETO FRONTIER SCATTER WITH PARETO CURVE
       const ctxScatter = document.getElementById('scatterChart');
       if (ctxScatter) {
         if (scatterChart) scatterChart.destroy();
 
-        const scatterData = displayedModels
-          .filter(m => m.cpTask !== null)
-          .map(m => ({
-            x: m.cpTask,
-            y: m.score,
-            name: capitalize(m.modelName)
-          }));
+        const validModels = allModels.filter(m => m.cpTask !== null && m.score !== null);
+        const scatterData = validModels.map(m => ({
+          x: m.cpTask,
+          y: m.score,
+          name: capitalize(m.modelName),
+          author: capitalize(m.author)
+        }));
+
+        // Compute Pareto frontier points (models not dominated by any other: cheaper AND smarter)
+        // Sort by cost ascending
+        const sortedByCost = [...validModels].sort((a, b) => a.cpTask - b.cpTask);
+        const paretoPoints = [];
+        let maxScoreSeen = -Infinity;
+        sortedByCost.forEach(m => {
+          if (m.score > maxScoreSeen) {
+            paretoPoints.push({ x: m.cpTask, y: m.score });
+            maxScoreSeen = m.score;
+          }
+        });
 
         scatterChart = new Chart(ctxScatter, {
           type: 'scatter',
           data: {
+            datasets: [
+              {
+                label: 'Frontier Models',
+                data: scatterData,
+                backgroundColor: '#43003b',
+                borderColor: '#8842fd',
+                borderWidth: 2,
+                pointRadius: 6,
+                pointHoverRadius: 9
+              },
+              {
+                type: 'line',
+                label: 'Pareto Optimal Frontier',
+                data: paretoPoints,
+                borderColor: 'rgba(16, 185, 129, 0.8)',
+                borderWidth: 2,
+                borderDash: [5, 4],
+                fill: false,
+                pointRadius: 0,
+                tension: 0.1
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: true,
+                position: 'top',
+                align: 'end',
+                labels: { boxWidth: 12, font: { size: 10 } }
+              },
+              tooltip: {
+                backgroundColor: '#111827',
+                padding: 10,
+                cornerRadius: 6,
+                callbacks: {
+                  title: (items) => items[0].raw.name || 'Pareto Frontier',
+                  label: (ctx) => `Score: ${ctx.raw.y.toFixed(2)} | Cost: $${ctx.raw.x}`
+                }
+              }
+            },
+            scales: {
+              x: {
+                title: { display: true, text: 'Compute Cost per Task ($) (Lower is Better)', font: { size: 10 } },
+                grid: { color: '#f4f4f5' }
+              },
+              y: {
+                title: { display: true, text: 'GAP Score (Higher is Better)', font: { size: 10 } },
+                grid: { color: '#f4f4f5' }
+              }
+            }
+          }
+        });
+      }
+
+      // CHART 3: EFFICIENCY YIELD (Intelligence per Dollar)
+      const ctxEff = document.getElementById('efficiencyChart');
+      if (ctxEff) {
+        if (efficiencyChart) efficiencyChart.destroy();
+
+        const effData = chartModels.map(m => m.efficiency !== null ? m.efficiency : 0);
+
+        efficiencyChart = new Chart(ctxEff, {
+          type: 'bar',
+          data: {
+            labels: labels,
             datasets: [{
-              data: scatterData,
-              backgroundColor: '#111827',
-              borderColor: '#0066cc',
+              data: effData,
+              backgroundColor: '#059669',
+              borderRadius: 4,
+              barThickness: 20
+            }]
+          },
+          plugins: [scoreInBarPlugin],
+          options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: '#111827',
+                padding: 10,
+                cornerRadius: 6,
+                callbacks: {
+                  label: (ctx) => `Efficiency: ${ctx.parsed.x.toFixed(3)} Score/$`
+                }
+              }
+            },
+            scales: {
+              x: { beginAtZero: true, grid: { color: '#f4f4f5' } },
+              y: {
+                grid: { display: false },
+                ticks: {
+                  callback: function(val, index) {
+                    const text = this.getLabelForValue(val);
+                    return text.length > 22 ? text.substring(0, 20) + '...' : text;
+                  }
+                }
+              }
+            }
+          }
+        });
+      }
+
+      // CHART 4: QUALITY VS SPEED (TPTask Throughput Scatter)
+      const ctxSpeed = document.getElementById('speedQualityChart');
+      if (ctxSpeed) {
+        if (speedQualityChart) speedQualityChart.destroy();
+
+        const speedData = allModels
+          .filter(m => m.tpTask !== null && m.score !== null)
+          .map(m => ({
+            x: m.tpTask,
+            y: m.score,
+            name: capitalize(m.modelName)
+          }));
+
+        speedQualityChart = new Chart(ctxSpeed, {
+          type: 'scatter',
+          data: {
+            datasets: [{
+              data: speedData,
+              backgroundColor: '#d97706',
+              borderColor: '#f59e0b',
               borderWidth: 2,
               pointRadius: 6,
               pointHoverRadius: 9
@@ -1159,103 +1452,55 @@
                 cornerRadius: 6,
                 callbacks: {
                   title: (items) => items[0].raw.name,
-                  label: (ctx) => `Score: ${ctx.raw.y.toFixed(2)} | Cost: $${ctx.raw.x}`
+                  label: (ctx) => `Score: ${ctx.raw.y.toFixed(2)} | Throughput: ${ctx.raw.x.toLocaleString()}`
                 }
               }
             },
             scales: {
               x: {
-                title: { display: true, text: 'Compute Cost (CPTask in $)', font: { size: 10 } },
+                title: { display: true, text: 'Throughput (TPTask) (Higher is Faster)', font: { size: 10 } },
                 grid: { color: '#f4f4f5' }
               },
               y: {
-                title: { display: true, text: 'GAP Score', font: { size: 10 } },
+                title: { display: true, text: 'GAP Score (Higher is Smarter)', font: { size: 10 } },
                 grid: { color: '#f4f4f5' }
               }
             }
           }
         });
       }
+    }
 
-      // Chart 3: Cost Efficiency
-      const ctxEff = document.getElementById('efficiencyChart');
-      if (ctxEff) {
-        if (efficiencyChart) efficiencyChart.destroy();
+    // UPDATE CHART VIEW MODE (GRID vs SINGLE FOCUSED VIEW)
+    function setChartView(mode) {
+      currentChartView = mode;
+      const cPareto = document.getElementById('cardPareto');
+      const cScores = document.getElementById('cardScores');
+      const cEff = document.getElementById('cardEfficiency');
+      const cSpeed = document.getElementById('cardSpeed');
+      const container = document.getElementById('chartsContainer');
 
-        const effData = displayedModels.map(m => m.efficiency !== null ? m.efficiency : 0);
-
-        efficiencyChart = new Chart(ctxEff, {
-          type: 'bar',
-          data: {
-            labels: labels,
-            datasets: [{
-              data: effData,
-              backgroundColor: '#059669',
-              borderRadius: 4,
-              barThickness: 24
-            }]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-              legend: { display: false },
-              tooltip: {
-                backgroundColor: '#111827',
-                padding: 10,
-                cornerRadius: 6,
-                callbacks: {
-                  label: (ctx) => `Efficiency Yield: ${ctx.parsed.y.toFixed(3)} Score/$`
-                }
-              }
-            },
-            scales: {
-              y: { beginAtZero: true, grid: { color: '#f4f4f5' } },
-              x: { grid: { display: false }, ticks: { maxRotation: 0 } }
-            }
-          }
-        });
+      if (mode === 'grid') {
+        container.className = 'grid grid-cols-1 lg:grid-cols-2 gap-6';
+        cPareto.classList.remove('hidden');
+        cScores.classList.remove('hidden');
+        cEff.classList.remove('hidden');
+        cSpeed.classList.remove('hidden');
+      } else {
+        container.className = 'grid grid-cols-1 gap-6';
+        cPareto.classList.toggle('hidden', mode !== 'pareto');
+        cScores.classList.toggle('hidden', mode !== 'scores');
+        cEff.classList.toggle('hidden', mode !== 'efficiency');
+        cSpeed.classList.toggle('hidden', mode !== 'speed');
       }
 
-      // Chart 4: TPTask Throughput
-      const ctxTP = document.getElementById('throughputChart');
-      if (ctxTP) {
-        if (throughputChart) throughputChart.destroy();
-
-        const tpData = displayedModels.map(m => m.tpTask !== null ? m.tpTask : 0);
-
-        throughputChart = new Chart(ctxTP, {
-          type: 'bar',
-          data: {
-            labels: labels,
-            datasets: [{
-              data: tpData,
-              backgroundColor: '#d97706',
-              borderRadius: 4,
-              barThickness: 24
-            }]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-              legend: { display: false },
-              tooltip: {
-                backgroundColor: '#111827',
-                padding: 10,
-                cornerRadius: 6,
-                callbacks: {
-                  label: (ctx) => `Throughput: ${ctx.parsed.y.toLocaleString()} tasks`
-                }
-              }
-            },
-            scales: {
-              y: { beginAtZero: true, grid: { color: '#f4f4f5' } },
-              x: { grid: { display: false }, ticks: { maxRotation: 0 } }
-            }
-          }
-        });
-      }
+      // Re-trigger chart resize
+      setTimeout(() => {
+        if (scoreChart) scoreChart.resize();
+        if (scatterChart) scatterChart.resize();
+        if (efficiencyChart) efficiencyChart.resize();
+        if (speedQualityChart) speedQualityChart.resize();
+      }, 50);
     }
 
     // COMPARE SELECTORS
@@ -1334,7 +1579,7 @@
       const analysisEl = document.getElementById('cmpAnalysisText');
       if (analysisEl) {
         if (mA.id === mB.id) {
-          analysisEl.innerHTML = `<strong>Same model selected.</strong> Select two distinct frontier models to compare.`;
+          analysisEl.innerHTML = `<strong>Identical model selected.</strong> Choose two distinct frontier models to analyze performance trade-offs.`;
         } else {
           const winner = mA.score >= mB.score ? mA : mB;
           const cheaper = (mA.cpTask !== null && mB.cpTask !== null) ? (mA.cpTask <= mB.cpTask ? mA : mB) : null;
@@ -1347,17 +1592,40 @@
       }
     }
 
-    // SETUP EVENT LISTENERS
+    // INITIALIZATION & EVENT HANDLERS
     document.addEventListener('DOMContentLoaded', () => {
-      // Refresh button
       const refreshBtn = document.getElementById('refreshBtn');
       if (refreshBtn) refreshBtn.addEventListener('click', loadData);
 
-      // Search input
       const searchInput = document.getElementById('searchInput');
-      if (searchInput) {
-        searchInput.addEventListener('input', processAndRender);
-      }
+      if (searchInput) searchInput.addEventListener('input', processAndRender);
+
+      // Ranking Mode Tabs
+      document.querySelectorAll('.rank-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.rank-tab').forEach(b => {
+            b.classList.remove('active', 'bg-white', 'text-neutral-950', 'shadow-sm', 'font-semibold');
+            b.classList.add('text-neutral-600', 'font-medium');
+          });
+          btn.classList.add('active', 'bg-white', 'text-neutral-950', 'shadow-sm', 'font-semibold');
+          btn.classList.remove('text-neutral-600', 'font-medium');
+          currentRankMode = btn.getAttribute('data-rank');
+          processAndRender();
+        });
+      });
+
+      // Chart Mode Switcher Tabs
+      document.querySelectorAll('.chart-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.chart-tab').forEach(b => {
+            b.classList.remove('active', 'bg-white', 'text-neutral-950', 'shadow-sm', 'font-semibold');
+            b.classList.add('text-neutral-600', 'font-medium');
+          });
+          btn.classList.add('active', 'bg-white', 'text-neutral-950', 'shadow-sm', 'font-semibold');
+          btn.classList.remove('text-neutral-600', 'font-medium');
+          setChartView(btn.getAttribute('data-chartview'));
+        });
+      });
 
       // Filter pills
       document.querySelectorAll('.filter-pill').forEach(btn => {
@@ -1373,16 +1641,16 @@
         });
       });
 
-      // Sort selector
-      const sortSelect = document.getElementById('sortSelect');
-      if (sortSelect) {
-        sortSelect.addEventListener('change', (e) => {
-          currentSort = e.target.value;
+      // View count select (10 / 25 / all)
+      const viewSelect = document.getElementById('viewCountSelect');
+      if (viewSelect) {
+        viewSelect.addEventListener('change', (e) => {
+          currentViewCount = e.target.value === 'all' ? 'all' : parseInt(e.target.value, 10);
           processAndRender();
         });
       }
 
-      // Compare selectors
+      // Compare model selectors
       const selA = document.getElementById('compareModelA');
       const selB = document.getElementById('compareModelB');
       if (selA) selA.addEventListener('change', updateComparison);
@@ -1395,14 +1663,14 @@
           try {
             await navigator.clipboard.writeText(JSON.stringify(allModels, null, 2));
             copyBtn.textContent = 'Copied!';
-            setTimeout(() => { copyBtn.textContent = 'Copy Data JSON'; }, 2000);
+            setTimeout(() => { copyBtn.textContent = 'Copy JSON'; }, 2000);
           } catch (e) {
             alert('Copied to clipboard.');
           }
         });
       }
 
-      // Initial live fetch
+      // Initial load
       loadData();
     });
   </script>
