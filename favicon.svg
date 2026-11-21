@@ -3,7 +3,7 @@
     .bg { fill: #f5f2ea; stroke: #e2ddd4; stroke-width: 1.5; }
     .txt { fill: #111827; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-weight: 700; font-size: 11.5px; letter-spacing: 0.06em; }
     @media (prefers-color-scheme: dark) {
-      .bg { fill: #18181b; stroke: #2e2e33; }
+      .bg { fill: #43003b; stroke: #5a004f; }
       .txt { fill: #ffffff; }
     }
   </style>
