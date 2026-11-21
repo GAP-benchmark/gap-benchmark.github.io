@@ -1,0 +1,12 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>
+  <style>
+    .bg { fill: #f5f2ea; stroke: #e2ddd4; stroke-width: 1.5; }
+    .txt { fill: #111827; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-weight: 700; font-size: 11.5px; letter-spacing: 0.06em; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #18181b; stroke: #2e2e33; }
+      .txt { fill: #ffffff; }
+    }
+  </style>
+  <rect class='bg' x='1.5' y='1.5' width='29' height='29' rx='7' />
+  <text class='txt' x='16' y='20.5' text-anchor='middle'>GAP</text>
+</svg>
