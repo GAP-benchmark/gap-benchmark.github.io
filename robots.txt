@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://gap.sdj.com.np/sitemap.xml
+Sitemap: https://gap-benchmark.github.io/sitemap.xml
