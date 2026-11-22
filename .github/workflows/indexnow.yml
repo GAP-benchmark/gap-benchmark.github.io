@@ -1,0 +1,46 @@
+name: Notify IndexNow
+
+on:
+  workflow_run:
+    workflows: ["Notify IndexNow"]
+    types: [completed]
+    branches: [main]
+
+jobs:
+  submit-indexnow:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull URLs from sitemap and submit to IndexNow
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          HOST: "https://gap-benchmark.github.io/"
+        run: |
+          set -euo pipefail
+
+          URLS_JSON=$(curl -fsSL "https://${HOST}/sitemap.xml" \
+            | grep -oP '(?<=<loc>)[^<]+' \
+            | head -n 10000 \
+            | jq -R -s -c 'split("\n") | map(select(length > 0))')
+
+          if [ "$URLS_JSON" = "[]" ]; then
+            echo "No URLs found in sitemap; skipping."
+            exit 0
+          fi
+
+          CODE=$(curl -s -o /tmp/indexnow_body.txt -w "%{http_code}" \
+            -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{
+              \"host\": \"${HOST}\",
+              \"key\": \"${INDEXNOW_KEY}\",
+              \"keyLocation\": \"https://${HOST}/${INDEXNOW_KEY}.txt\",
+              \"urlList\": ${URLS_JSON}
+            }")
+
+          echo "IndexNow response code: $CODE"
+          cat /tmp/indexnow_body.txt
+
+          if [ "$CODE" != "200" ] && [ "$CODE" != "202" ]; then
+            exit 1
+          fi
